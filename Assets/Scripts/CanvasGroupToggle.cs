@@ -5,7 +5,7 @@ namespace PlateauSamples.UrbanScape
     [RequireComponent(typeof(CanvasGroup))]
     public class CanvasGroupToggle : MonoBehaviour
     {
-        CanvasGroup m_CanvasGroup;
+        [SerializeField] CanvasGroup m_CanvasGroup;
 
         void Awake()
         {

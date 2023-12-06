@@ -6,7 +6,7 @@ namespace PlateauSamples.UrbanScape
     [RequireComponent(typeof(CanvasGroup))]
     public class PanelClickOutsideController : MonoBehaviour
     {
-        public CanvasGroup m_PanelCanvasGroup;
+        [SerializeField] CanvasGroup m_PanelCanvasGroup;
 
         void Update()
         {

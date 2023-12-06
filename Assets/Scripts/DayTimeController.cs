@@ -6,9 +6,9 @@ namespace PlateauSamples.UrbanScape
     [RequireComponent(typeof(EnvironmentController))]
     public class DayTimeController : MonoBehaviour
     {
-        public bool m_DayTimeIsDynamic;
-        public EnvironmentController m_EnvironmentController;
-        public float m_Speed = 0.1f;
+        [SerializeField] bool m_DayTimeIsDynamic;
+        [SerializeField] EnvironmentController m_EnvironmentController;
+        [SerializeField] float m_Speed = 0.1f;
 
         readonly float m_WeatherChangeTime = 20f;
         float m_CurrentTime = 0f;

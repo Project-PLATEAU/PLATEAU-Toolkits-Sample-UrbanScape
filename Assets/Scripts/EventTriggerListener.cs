@@ -5,7 +5,7 @@ namespace PlateauSamples.UrbanScape
 {
     public class EventTriggerListener : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     {
-        public CameraController m_CameraController;
+        [SerializeField] CameraController m_CameraController;
 
         public void OnPointerDown(PointerEventData eventData)
         {

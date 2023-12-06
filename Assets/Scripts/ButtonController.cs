@@ -5,11 +5,11 @@ namespace PlateauSamples.UrbanScape
 {
     public class ButtonController : MonoBehaviour
     {
-        public Button m_HomeButton;
-        public Button m_Camera1Button;
-        public Button m_Camera2Button;
-        public Button m_BackButton;
-        public CameraController m_CameraController;
+        [SerializeField] Button m_HomeButton;
+        [SerializeField] Button m_Camera1Button;
+        [SerializeField] Button m_Camera2Button;
+        [SerializeField] Button m_BackButton;
+        [SerializeField] CameraController m_CameraController;
 
         void Start()
         {

@@ -6,18 +6,17 @@ namespace PlateauSamples.UrbanScape
 {
     public class WeatherSliderController : MonoBehaviour
     {
-        public Slider m_RainSlider;
-        public Slider m_SnowSlider;
-        public Slider m_CloudySlider;
-        public EnvironmentController m_EnvironmentController;
-        public CanvasGroup m_CanvasGroup;
+        [SerializeField] Slider m_RainSlider;
+        [SerializeField] Slider m_SnowSlider;
+        [SerializeField] Slider m_CloudySlider;
+        [SerializeField] EnvironmentController m_EnvironmentController;
+        [SerializeField] CanvasGroup m_CanvasGroup;
 
         void Awake()
         {
 
             if (m_EnvironmentController == null)
             {
-                Debug.LogError("EnvironmentController component is not found in the scene.");
                 return;
             }
         }

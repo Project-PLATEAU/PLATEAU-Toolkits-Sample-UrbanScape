@@ -6,9 +6,8 @@ namespace PlateauSamples.UrbanScape
 {
     public class TimeOfDaySliderController : MonoBehaviour
     {
-        [SerializeField]
-        Slider m_Slider;
-        public EnvironmentController m_EnvironmentController;
+        [SerializeField] Slider m_Slider;
+        [SerializeField] EnvironmentController m_EnvironmentController;
 
         void Awake()
         {

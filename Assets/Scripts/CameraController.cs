@@ -1,16 +1,17 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
+using PlateauToolkit.Sandbox;
 
 namespace PlateauSamples.UrbanScape
 {
     public class CameraController : MonoBehaviour
     {
-        public Transform m_Target;
-        public float m_MoveSpeed = 5.0f;
-        public float m_Sensitivity = 2.0f;
-        public float m_OrbitDistance = 50.0f;
-        public float m_MinVerticalAngle = 0f;
-        public float m_MaxVerticalAngle = 80f;
+        [SerializeField] Transform m_Target;
+        [SerializeField] float m_MoveSpeed = 5.0f;
+        [SerializeField] float m_Sensitivity = 2.0f;
+        [SerializeField] float m_OrbitDistance = 50.0f;
+        [SerializeField] float m_MinVerticalAngle = 0f;
+        [SerializeField] float m_MaxVerticalAngle = 80f;
 
         float m_RotationX = 0.0f;
         float m_RotationY = 0.0f;
@@ -18,9 +19,12 @@ namespace PlateauSamples.UrbanScape
         Quaternion m_InitialRotation;
         Vector3 m_InitialPosition;
 
+        Camera m_MainCamera;
+
         public Camera m_FixedCamera1;
         public Camera m_FixedCamera2;
-        Camera m_MainCamera;
+
+        public PlateauSandboxCameraManager m_CameraManager;
 
         bool m_IsDraggingUI;
 
@@ -92,6 +96,8 @@ namespace PlateauSamples.UrbanScape
 
         public void ResetCamera()
         {
+            DisableAllCameras();
+
             if (!m_MainCamera.enabled)
             {
                 SetToMainCamera();
@@ -125,6 +131,7 @@ namespace PlateauSamples.UrbanScape
             m_MainCamera.enabled = false;
             m_FixedCamera1.enabled = false;
             m_FixedCamera2.enabled = false;
+            m_CameraManager.SwitchCamera(PlateauSandboxCameraMode.None);
         }
         public void SetDraggingUI(bool dragging)
         {
