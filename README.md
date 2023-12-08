@@ -294,7 +294,7 @@ Unityのヒエラルキーでのカスタム選択機能は、複雑な階層を
 ##  4-3. プロップ/アバター/乗り物の配置
 
 Sandbox Toolkitの機能を使ってシーンにプロップ/アバター/乗り物を配置し、さまざまなカスタマイズができます。<br>
-詳しくは[Sandbox Toolkitの使い方](https://github.com/Project-PLATEAU/PLATEAU-SDK-Toolkits-for-Unity/blob/main/sandbox_toolkit.md)をご確認ください。
+詳しくは[Sandbox Toolkitの使い方](https://github.com/unity-shimizu/PLATEAU-SDK-Toolkits-for-Unity/blob/main/PlateauToolkit.Sandbox/README.md)をご確認ください。
 
 プロップの配置<br>
 <img width="600" alt="multiplay_sample_scene" src="https://github.com/unity-takeuchi/PLATEAU-SDK-Toolkits-for-Unity-drafts/blob/main/SampleSceneReadmeImages/UrbanScape/simulation_sample_customize_props.png">
