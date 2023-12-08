@@ -197,7 +197,7 @@ RenderingToolkitを使用して環境システムを作成します。ワンク�
 <img width="600" alt="simulation_sample_apply_texturing3" src="https://github.com/unity-takeuchi/PLATEAU-SDK-Toolkits-for-Unity-drafts/blob/main/SampleSceneReadmeImages/UrbanScape/simulation_sample_apply_texturing3.png">
 
 
-### CeswiumでのPlateau地面タイルの読み込み
+### CesiumでのPlateau地面タイルの読み込み
 CesiumとMapToolkitの位置合わせ機能を利用してPlateauの地面タイルを読み込み、遠景として使用します。ここまでのステップで基本的な景観設定が完了します。
 
 <img width="600" alt="simulation_sample_cesium_tile2" src="https://github.com/unity-takeuchi/PLATEAU-SDK-Toolkits-for-Unity-drafts/blob/main/SampleSceneReadmeImages/UrbanScape/simulation_sample_cesium_tile2.png">
@@ -217,7 +217,7 @@ CesiumとMapToolkitの位置合わせ機能を利用してPlateauの地面タイ
 ## 4-2. 道路や地面の調整のTips
 
 ### 地面の修正
-Plateayの地面のメッシュはところどころ凹んでいる部分がある為、Probuilderを使用して修正していきます。まずは地面のメッシュをProbuilderで編集可能なオブジェクトに変換します。
+Plateauの地面のメッシュはところどころ凹んでいる部分がある為、Probuilderを使用して修正していきます。まずは地面のメッシュをProbuilderで編集可能なオブジェクトに変換します。
 
 <img width="600" alt="simulation_sample_road_cleanup1" src="https://github.com/unity-takeuchi/PLATEAU-SDK-Toolkits-for-Unity-drafts/blob/main/SampleSceneReadmeImages/UrbanScape/simulation_sample_road_cleanup1.png">
 <br>
