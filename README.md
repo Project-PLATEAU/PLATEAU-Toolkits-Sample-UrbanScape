@@ -30,10 +30,10 @@ PLATEAU-SDK-Toolkits for Unityを用いたシミュレーションアプリケ�
 このサンプルシーンを使うことで、都市の景観を綺麗に見せられるようなビューアーアプリを作ることが可能です。<br>
 都市でのPV作成などのユースケースを想定したサンプルプロジェクトです。<br>
 
-## 1-2. Toolkitの利用機能
+## 1-2. 利用されているToolkitsの機能
 
 
-### Rendeting Toolkit
+### Rendering Toolkit
 - 天候の変更
 - 時間変更
 - ポストエフェクト
@@ -59,13 +59,12 @@ PLATEAU-SDK-Toolkits for Unityを用いたシミュレーションアプリケ�
 
 ### Rendering Pipeline
 - HDRP
-- URP
 
-Built-in Rendering Pipelineでは動作しません。<br>
+Built-in Rendering Pipeline、URPでは動作しません。<br>
 
 ## 2-2. サンプルシーンのビルド方法
 
-①Assets/Simulation.unityを開きます。<br>
+①Assets/Scenes/UrbanScapeを開きます。<br>
 <img width="600" alt="multiplay_sample_scene" src="https://github.com/unity-takeuchi/PLATEAU-SDK-Toolkits-for-Unity-drafts/blob/main/SampleSceneReadmeImages/UrbanScape/simulation_sample_scene.png">
 
 
