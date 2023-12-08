@@ -21,7 +21,7 @@ PLATEAU-SDK-Toolkits for Unityを用いたシミュレーションアプリケ�
 - [4. サンプルシーンのカスタマイズ方法](#4-サンプルシーンのカスタマイズ方法)
   * [4-1. 3D都市モデルの変更](#4-1-3d都市モデルの変更)
   * [4-2. 道路のテクスチャ差し替え](#4-2-道路のテクスチャ差し替え)
-  * [4-3. Props/Human/Vehicle配置](#4-3-propshumanvehicle配置)
+  * [4-3. プロップ/アバター/乗り物の配置](#4-3-プロップアバター乗り物の配置)
   * [4-4. ポストエフェクトの適用(HDRP)](#4-4-ポストエフェクトの適用HDRP)
 
  
@@ -291,18 +291,18 @@ Unityのヒエラルキーでのカスタム選択機能は、複雑な階層を
 <br>
 
 
-##  4-3. Props/Human/Vehicle配置
+##  4-3. プロップ/アバター/乗り物の配置
 
-Sandbox Toolkitの機能を使ってシーンにProps/Human/Vehicleを配置し、さまざまなカスタマイズができます。<br>
+Sandbox Toolkitの機能を使ってシーンにプロップ/アバター/乗り物を配置し、さまざまなカスタマイズができます。<br>
 詳しくは[Sandbox Toolkitの使い方](https://github.com/Project-PLATEAU/PLATEAU-SDK-Toolkits-for-Unity/blob/main/sandbox_toolkit.md)をご確認ください。
 
-Propsの配置<br>
+プロップの配置<br>
 <img width="600" alt="multiplay_sample_scene" src="https://github.com/unity-takeuchi/PLATEAU-SDK-Toolkits-for-Unity-drafts/blob/main/SampleSceneReadmeImages/UrbanScape/simulation_sample_customize_props.png">
 
-Human（人間）の配置<br>
+アバターの配置<br>
 <img width="600" alt="multiplay_sample_scene" src="https://github.com/unity-takeuchi/PLATEAU-SDK-Toolkits-for-Unity-drafts/blob/main/SampleSceneReadmeImages/UrbanScape/simulation_sample_customize_human.png">
 
-Vehicle(車)の配置<br>
+乗り物の配置<br>
 <img width="600" alt="multiplay_sample_scene" src="https://github.com/unity-takeuchi/PLATEAU-SDK-Toolkits-for-Unity-drafts/blob/main/SampleSceneReadmeImages/UrbanScape/simulation_sample_customize_vehicle.png">
 
 
