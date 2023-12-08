@@ -120,7 +120,11 @@ Built-in Rendering Pipeline、URPでは動作しません。<br>
 
 <img width="600" alt="simulation_sample_toycamera" src="https://github.com/unity-takeuchi/PLATEAU-SDK-Toolkits-for-Unity-drafts/blob/main/SampleSceneReadmeImages/UrbanScape/simulation_sample_toycamera.png">
 
-⑥歩いているHumanや走っているVehicleをクリックすると、カメラインタラクションモードに入ります。左に表示される数字ボタンを押すと視点を切り替えることができます。
+⑥ホームボタンを押すと、ホームビューに戻ります。
+<img width="600" alt="simulation_sample_firstview" src="https://github.com/unity-takeuchi/PLATEAU-SDK-Toolkits-for-Unity-drafts/blob/main/SampleSceneReadmeImages/UrbanScape/simulation_sample_firstview.png">
+
+
+⑦歩いているHumanや走っているVehicleをクリックすると、カメラインタラクションモードに入ります。左に表示される数字ボタンを押すと視点を切り替えることができます。
 
 
 「1」ボタンを押下すると一人称視点モードに変わります。
