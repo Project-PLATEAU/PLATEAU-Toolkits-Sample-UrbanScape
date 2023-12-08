@@ -48,7 +48,7 @@ PLATEAU-SDK-Toolkits for Unityを用いたシミュレーションアプリケ�
 
 
 # 2. 利用手順
-## 2-1. 必要環境
+## 2-1. 推奨環境
 ### OS環境
 - Windows11
 - macOS Ventura 13.2
@@ -116,27 +116,27 @@ Built-in Rendering Pipeline、URPでは動作しません。<br>
 
 
 
-⑤固定カメラ２ボタンを押下すると、俯瞰視点の定点カメラビューに遷移します。このカメラには「トイカメラ」のポストエフェクトが適用されています。
+⑤固定カメラ２ボタンを押下すると、俯瞰視点の定点カメラビューに遷移します。このカメラには「トイカメラ」のポストエフェクトが適用されています。<br>
 
 <img width="600" alt="simulation_sample_toycamera" src="https://github.com/unity-takeuchi/PLATEAU-SDK-Toolkits-for-Unity-drafts/blob/main/SampleSceneReadmeImages/UrbanScape/simulation_sample_toycamera.png">
 
-⑥ホームボタンを押すと、ホームビューに戻ります。
+⑥ホームボタンを押すと、ホームビューに戻ります。<br>
 <img width="600" alt="simulation_sample_firstview" src="https://github.com/unity-takeuchi/PLATEAU-SDK-Toolkits-for-Unity-drafts/blob/main/SampleSceneReadmeImages/UrbanScape/simulation_sample_firstview.png">
 
 
-⑦歩いているHumanや走っているVehicleをクリックすると、カメラインタラクションモードに入ります。左に表示される数字ボタンを押すと視点を切り替えることができます。
+⑦歩いているHumanや走っているVehicleをクリックすると、カメラインタラクションモードに入ります。左に表示される数字ボタンを押すと視点を切り替えることができます。<br>
 
 
-「1」ボタンを押下すると一人称視点モードに変わります。
+「1」ボタンを押下すると一人称視点モードに変わります。<br>
 
 <img width="600" alt="スクリーンショット 2023-12-04 13 58 30" src="https://github.com/unity-takeuchi/PLATEAU-SDK-Toolkits-for-Unity-drafts/assets/137732437/a0ff6643-4d0e-477e-a31e-3754d3ae73c7">
 
 
-「2.」ボタンを押下すると三人称視点モードに変わります。
+「2.」ボタンを押下すると三人称視点モードに変わります。<br>
 
 <img width="600" alt="スクリーンショット 2023-12-04 13 58 36" src="https://github.com/unity-takeuchi/PLATEAU-SDK-Toolkits-for-Unity-drafts/assets/137732437/8db28f45-aefd-4c87-9253-f99ae014f78e">
 
-「3」ボタンを押下すると見回しモードに変わります。
+「3」ボタンを押下すると見回しモードに変わります。<br>
 
 <img width="600" alt="スクリーンショット 2023-12-04 13 58 40" src="https://github.com/unity-takeuchi/PLATEAU-SDK-Toolkits-for-Unity-drafts/assets/137732437/e4941b22-0ed0-44af-b8a3-1531c75175eb">
 
