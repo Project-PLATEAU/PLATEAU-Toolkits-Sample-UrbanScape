@@ -27,6 +27,7 @@ namespace PlateauSamples.UrbanScape
         public PlateauSandboxCameraManager m_CameraManager;
 
         bool m_IsDraggingUI;
+        bool m_IsCameraDragging = false;
 
         void Start()
         {
@@ -34,7 +35,6 @@ namespace PlateauSamples.UrbanScape
 
             if (!m_Target)
             {
-                Debug.LogError("CameraController requires a target Transform to orbit.");
                 return;
             }
 
@@ -50,25 +50,27 @@ namespace PlateauSamples.UrbanScape
 
         void Update()
         {
-            if (EventSystem.current.IsPointerOverGameObject() || m_IsDraggingUI)
+            if (m_IsCameraDragging || !EventSystem.current.IsPointerOverGameObject())
             {
-                return;
+                HandleRotation();
             }
-
-            HandleRotation();
         }
 
         void HandleRotation()
         {
             if (Input.GetMouseButtonDown(0))
             {
+                // マウスドラッグ開始
+                m_IsCameraDragging = true;
+                // マウスドラッグ開始時の角度を記録
                 Vector3 eulerAngles = transform.eulerAngles;
                 m_RotationX = eulerAngles.y;
                 m_RotationY = eulerAngles.x > 180 ? eulerAngles.x - 360 : eulerAngles.x;
             }
 
-            if (Input.GetMouseButton(0))
+            if (m_IsCameraDragging && Input.GetMouseButton(0))
             {
+                // マウスドラッグ中の処理
                 m_RotationX += Input.GetAxis("Mouse X") * m_Sensitivity;
                 m_RotationY -= Input.GetAxis("Mouse Y") * m_Sensitivity;
 
@@ -78,6 +80,11 @@ namespace PlateauSamples.UrbanScape
                 Vector3 positionOffset = rotation * Vector3.back * m_OrbitDistance;
                 transform.rotation = rotation;
                 transform.position = m_Target.position + positionOffset;
+            }
+
+            if (Input.GetMouseButtonUp(0))
+            {
+                m_IsCameraDragging = false;
             }
         }
 
@@ -128,10 +135,10 @@ namespace PlateauSamples.UrbanScape
         }
         void DisableAllCameras()
         {
+            m_CameraManager.SwitchCamera(PlateauSandboxCameraMode.None);
             m_MainCamera.enabled = false;
             m_FixedCamera1.enabled = false;
             m_FixedCamera2.enabled = false;
-            m_CameraManager.SwitchCamera(PlateauSandboxCameraMode.None);
         }
         public void SetDraggingUI(bool dragging)
         {
