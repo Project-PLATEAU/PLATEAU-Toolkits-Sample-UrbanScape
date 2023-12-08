@@ -21,7 +21,7 @@ PLATEAU-SDK-Toolkits for Unityを用いたシミュレーションアプリケ�
 - [4. サンプルシーンのカスタマイズ方法](#4-サンプルシーンのカスタマイズ方法)
   * [4-1. 3D都市モデルの変更](#4-1-3d都市モデルの変更)
   * [4-2. 道路のテクスチャ差し替え](#4-2-道路のテクスチャ差し替え)
-  * [4-3. Props/Human/Vehicle配置](#4-3-propshumanvehicle配置)
+  * [4-3. プロップ/アバター/乗り物の配置](#4-3-プロップアバター乗り物の配置)
   * [4-4. ポストエフェクトの適用(HDRP)](#4-4-ポストエフェクトの適用HDRP)
 
  
@@ -30,10 +30,10 @@ PLATEAU-SDK-Toolkits for Unityを用いたシミュレーションアプリケ�
 このサンプルシーンを使うことで、都市の景観を綺麗に見せられるようなビューアーアプリを作ることが可能です。<br>
 都市でのPV作成などのユースケースを想定したサンプルプロジェクトです。<br>
 
-## 1-2. Toolkitの利用機能
+## 1-2. 利用されているToolkitsの機能
 
 
-### Rendeting Toolkit
+### Rendering Toolkit
 - 天候の変更
 - 時間変更
 - ポストエフェクト
@@ -59,13 +59,12 @@ PLATEAU-SDK-Toolkits for Unityを用いたシミュレーションアプリケ�
 
 ### Rendering Pipeline
 - HDRP
-- URP
 
-Built-in Rendering Pipelineでは動作しません。<br>
+Built-in Rendering Pipeline、URPでは動作しません。<br>
 
 ## 2-2. サンプルシーンのビルド方法
 
-①Assets/Simulation.unityを開きます。<br>
+①Assets/Scenes/UrbanScapeを開きます。<br>
 <img width="600" alt="multiplay_sample_scene" src="https://github.com/unity-takeuchi/PLATEAU-SDK-Toolkits-for-Unity-drafts/blob/main/SampleSceneReadmeImages/UrbanScape/simulation_sample_scene.png">
 
 
@@ -121,7 +120,11 @@ Built-in Rendering Pipelineでは動作しません。<br>
 
 <img width="600" alt="simulation_sample_toycamera" src="https://github.com/unity-takeuchi/PLATEAU-SDK-Toolkits-for-Unity-drafts/blob/main/SampleSceneReadmeImages/UrbanScape/simulation_sample_toycamera.png">
 
-⑥歩いているHumanや走っているVehicleをクリックすると、カメラインタラクションモードに入ります。左に表示される数字ボタンを押すと視点を切り替えることができます。
+⑥ホームボタンを押すと、ホームビューに戻ります。
+<img width="600" alt="simulation_sample_firstview" src="https://github.com/unity-takeuchi/PLATEAU-SDK-Toolkits-for-Unity-drafts/blob/main/SampleSceneReadmeImages/UrbanScape/simulation_sample_firstview.png">
+
+
+⑦歩いているHumanや走っているVehicleをクリックすると、カメラインタラクションモードに入ります。左に表示される数字ボタンを押すと視点を切り替えることができます。
 
 
 「1」ボタンを押下すると一人称視点モードに変わります。
@@ -194,7 +197,7 @@ RenderingToolkitを使用して環境システムを作成します。ワンク�
 <img width="600" alt="simulation_sample_apply_texturing3" src="https://github.com/unity-takeuchi/PLATEAU-SDK-Toolkits-for-Unity-drafts/blob/main/SampleSceneReadmeImages/UrbanScape/simulation_sample_apply_texturing3.png">
 
 
-### CeswiumでのPlateau地面タイルの読み込み
+### CesiumでのPlateau地面タイルの読み込み
 CesiumとMapToolkitの位置合わせ機能を利用してPlateauの地面タイルを読み込み、遠景として使用します。ここまでのステップで基本的な景観設定が完了します。
 
 <img width="600" alt="simulation_sample_cesium_tile2" src="https://github.com/unity-takeuchi/PLATEAU-SDK-Toolkits-for-Unity-drafts/blob/main/SampleSceneReadmeImages/UrbanScape/simulation_sample_cesium_tile2.png">
@@ -214,7 +217,7 @@ CesiumとMapToolkitの位置合わせ機能を利用してPlateauの地面タイ
 ## 4-2. 道路や地面の調整のTips
 
 ### 地面の修正
-Plateayの地面のメッシュはところどころ凹んでいる部分がある為、Probuilderを使用して修正していきます。まずは地面のメッシュをProbuilderで編集可能なオブジェクトに変換します。
+Plateauの地面のメッシュはところどころ凹んでいる部分がある為、Probuilderを使用して修正していきます。まずは地面のメッシュをProbuilderで編集可能なオブジェクトに変換します。
 
 <img width="600" alt="simulation_sample_road_cleanup1" src="https://github.com/unity-takeuchi/PLATEAU-SDK-Toolkits-for-Unity-drafts/blob/main/SampleSceneReadmeImages/UrbanScape/simulation_sample_road_cleanup1.png">
 <br>
@@ -288,18 +291,18 @@ Unityのヒエラルキーでのカスタム選択機能は、複雑な階層を
 <br>
 
 
-##  4-3. Props/Human/Vehicle配置
+##  4-3. プロップ/アバター/乗り物の配置
 
-Sandbox Toolkitの機能を使ってシーンにProps/Human/Vehicleを配置し、さまざまなカスタマイズができます。<br>
+Sandbox Toolkitの機能を使ってシーンにプロップ/アバター/乗り物を配置し、さまざまなカスタマイズができます。<br>
 詳しくは[Sandbox Toolkitの使い方](https://github.com/Project-PLATEAU/PLATEAU-SDK-Toolkits-for-Unity/blob/main/sandbox_toolkit.md)をご確認ください。
 
-Propsの配置<br>
+プロップの配置<br>
 <img width="600" alt="multiplay_sample_scene" src="https://github.com/unity-takeuchi/PLATEAU-SDK-Toolkits-for-Unity-drafts/blob/main/SampleSceneReadmeImages/UrbanScape/simulation_sample_customize_props.png">
 
-Human（人間）の配置<br>
+アバターの配置<br>
 <img width="600" alt="multiplay_sample_scene" src="https://github.com/unity-takeuchi/PLATEAU-SDK-Toolkits-for-Unity-drafts/blob/main/SampleSceneReadmeImages/UrbanScape/simulation_sample_customize_human.png">
 
-Vehicle(車)の配置<br>
+乗り物の配置<br>
 <img width="600" alt="multiplay_sample_scene" src="https://github.com/unity-takeuchi/PLATEAU-SDK-Toolkits-for-Unity-drafts/blob/main/SampleSceneReadmeImages/UrbanScape/simulation_sample_customize_vehicle.png">
 
 
