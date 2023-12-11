@@ -60,9 +60,8 @@ namespace PlateauSamples.UrbanScape
         {
             if (Input.GetMouseButtonDown(0))
             {
-                // マウスドラッグ開始
                 m_IsCameraDragging = true;
-                // マウスドラッグ開始時の角度を記録
+
                 Vector3 eulerAngles = transform.eulerAngles;
                 m_RotationX = eulerAngles.y;
                 m_RotationY = eulerAngles.x > 180 ? eulerAngles.x - 360 : eulerAngles.x;
@@ -70,7 +69,6 @@ namespace PlateauSamples.UrbanScape
 
             if (m_IsCameraDragging && Input.GetMouseButton(0))
             {
-                // マウスドラッグ中の処理
                 m_RotationX += Input.GetAxis("Mouse X") * m_Sensitivity;
                 m_RotationY -= Input.GetAxis("Mouse Y") * m_Sensitivity;
 

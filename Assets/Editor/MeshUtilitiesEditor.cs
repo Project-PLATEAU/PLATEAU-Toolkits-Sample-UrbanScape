@@ -151,7 +151,7 @@ namespace PlateauSamples.UrbanScape
             return combinedMeshObject;
         }
 
-        private static void ReCombineSubMeshes(GameObject combinedMeshObject)
+        static void ReCombineSubMeshes(GameObject combinedMeshObject)
         {
             MeshFilter combinedMeshFilter = combinedMeshObject.GetComponent<MeshFilter>();
             MeshRenderer combinedMeshRenderer = combinedMeshObject.GetComponent<MeshRenderer>();
@@ -181,7 +181,7 @@ namespace PlateauSamples.UrbanScape
             var newCombineInstances = new List<CombineInstance>();
             var newMaterialsList = new List<Material>();
 
-            foreach (var group in materialGroups)
+            foreach (KeyValuePair<Material, List<CombineInstance>> group in materialGroups)
             {
                 Mesh newSubMesh = new Mesh();
                 newSubMesh.CombineMeshes(group.Value.ToArray(), true, false);

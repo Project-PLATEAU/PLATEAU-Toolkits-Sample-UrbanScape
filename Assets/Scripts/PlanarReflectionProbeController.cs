@@ -7,7 +7,7 @@ namespace PlateauSamples.UrbanScape
     [RequireComponent(typeof(PlanarReflectionProbe))]
     public class PlanarReflectionProbeController : MonoBehaviour
     {
-        private PlanarReflectionProbe m_PlanarReflectionProbe;
+        PlanarReflectionProbe m_PlanarReflectionProbe;
         [SerializeField] EnvironmentController m_EnvironmentController;
         float m_LastRainValue = -1;
 
