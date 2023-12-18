@@ -23,7 +23,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Common_Tile
+  m_Name: Common_Tile_01_MAT
   m_Shader: {fileID: -6465566751694194690, guid: a06e9f549481c6b49a76a1fe2aadfbfa,
     type: 3}
   m_ValidKeywords:
