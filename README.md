@@ -112,7 +112,7 @@ Built-in Rendering Pipeline、URPでは動作しません。<br>
 
 ⑤固定カメラ１ボタンを押下すると、人や車の通行が確認できる定点カメラビューに遷移します。<br>
 
-<img width="600" alt="スクリーンショット 2023-12-04 14 13 17" src="https://github.com/unity-takeuchi/PLATEAU-SDK-Toolkits-for-Unity-drafts/assets/137732437/ec43d0d7-ba8b-4978-9eb7-f69ad6111ba3">
+<img width="600" alt="simulation_sample_fixedcam" src="/Documentation~/Images/simulation_sample_fixedcam.png">
 
 
 
@@ -129,16 +129,16 @@ Built-in Rendering Pipeline、URPでは動作しません。<br>
 
 「1」ボタンを押下すると一人称視点モードに変わります。<br>
 
-<img width="600" alt="スクリーンショット 2023-12-04 13 58 30" src="https://github.com/unity-takeuchi/PLATEAU-SDK-Toolkits-for-Unity-drafts/assets/137732437/a0ff6643-4d0e-477e-a31e-3754d3ae73c7">
+<img width="600" alt="simulation_sample_FPV" src="/Documentation~/Images/simulation_sample_FPV.png">
 
 
 「2.」ボタンを押下すると三人称視点モードに変わります。<br>
 
-<img width="600" alt="スクリーンショット 2023-12-04 13 58 36" src="https://github.com/unity-takeuchi/PLATEAU-SDK-Toolkits-for-Unity-drafts/assets/137732437/8db28f45-aefd-4c87-9253-f99ae014f78e">
+<img width="600" alt="simulation_sample_TPV" src="/Documentation~/Images/simulation_sample_TPV.png">
 
 「3」ボタンを押下すると見回しモードに変わります。<br>
 
-<img width="600" alt="スクリーンショット 2023-12-04 13 58 40" src="https://github.com/unity-takeuchi/PLATEAU-SDK-Toolkits-for-Unity-drafts/assets/137732437/e4941b22-0ed0-44af-b8a3-1531c75175eb">
+<img width="600" alt="simulation_sample_lookaround" src="/Documentation~/Images/simulation_sample_lookaround.png">
 
 
 
