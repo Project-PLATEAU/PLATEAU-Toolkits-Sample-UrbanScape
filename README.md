@@ -65,12 +65,14 @@ Built-in Rendering Pipeline、URPでは動作しません。<br>
 ## 2-2. サンプルシーンのビルド方法
 
 ①Assets/Scenes/UrbanScapeを開きます。<br>
-<img width="600" alt="multiplay_sample_scene" src="./Documentation~/Images/simulation_sample_scene.png">
 
+<img width="600" alt="multiplay_sample_scene" src="./Documentation~/Images/simulation_sample_scene.png">
+<br><br>
 
 ②最初にHDRPに関してのウィザードが表示されることがありますが、閉じてください。<br>
-<img width="600" alt="multiplay_sample_hdrpwizard" src="./Documentation~/Images/simulation_sample_hdrpwizard.png">
 
+<img width="600" alt="multiplay_sample_hdrpwizard" src="./Documentation~/Images/simulation_sample_hdrpwizard.png">
+<br><br>
 
 ③メニューよりFile > Build Settingsを選択します。<br>
 
@@ -85,59 +87,54 @@ Built-in Rendering Pipeline、URPでは動作しません。<br>
 ①ビルドしたアプリケーションを開くと、オープニング画面が表示されます。<br>
 「始めましょう」ボタンを押下してください。<br>
 <img width="600" alt="simulation_sample_title" src="./Documentation~/Images/simulation_sample_title.png">
+<br><br>
 
 ②ホームビューに遷移します。このビューではマウス操作によってカメラを回転させることができます。<br>
 <img width="600" alt="simulation_sample_firstview" src="./Documentation~/Images/simulation_sample_firstview.png">
-
+<br>
 <img width="600" alt="simulation_sample_rotated" src="./Documentation~/Images/simulation_sample_rotated.png">
+<br><br>
 
-
-③画面右の時間帯変更スライダーを調整すると、シーンの時間帯を変更することができます。
-
+③画面右の時間帯変更スライダーを調整すると、シーンの時間帯を変更することができます。<br>
 <img width="600" alt="simulation_sample_mornig" src="./Documentation~/Images/simulation_sample_mornig.png">
-
-
+<br>
 <img width="600" alt="simulation_sample_night" src="./Documentation~/Images/simulation_sample_night.png">
-
+<br><br>
 
 ④天候ボタンを押下すると、各天候を調整するためのスライダーが表示されます。スライダーを動かすことで天候の変化が可能です。<br>
 <img width="600" alt="simulation_sample_weatherui" src="./Documentation~/Images/simulation_sample_weatherui.png">
-
+<br>
 <img width="600" alt="simulation_sample_rain" src="./Documentation~/Images/simulation_sample_rain.png">
-
+<br>
 <img width="600" alt="simulation_sample_snow" src="./Documentation~/Images/simulation_sample_snow.png">
-
+<br>
 <img width="600" alt="simulation_sample_cloudy" src="./Documentation~/Images/simulation_sample_cloudy.png">
-
+<br><br>
 
 ⑤固定カメラ１ボタンを押下すると、人や車の通行が確認できる定点カメラビューに遷移します。<br>
-
 <img width="600" alt="simulation_sample_fixedcam" src="./Documentation~/Images/simulation_sample_fixedcam.png">
-
+<br><br>
 
 
 ⑤固定カメラ２ボタンを押下すると、俯瞰視点の定点カメラビューに遷移します。このカメラには「トイカメラ」のポストエフェクトが適用されています。<br>
-
 <img width="600" alt="simulation_sample_toycamera" src="./Documentation~/Images/simulation_sample_toycamera.png">
+<br><br>
 
 ⑥ホームボタンを押すと、ホームビューに戻ります。<br>
 <img width="600" alt="simulation_sample_firstview" src="./Documentation~/Images/simulation_sample_firstview.png">
-
+<br><br>
 
 ⑦歩いているHumanや走っているVehicleをクリックすると、カメラインタラクションモードに入ります。左に表示される数字ボタンを押すと視点を切り替えることができます。<br>
 
 
 「1」ボタンを押下すると一人称視点モードに変わります。<br>
-
 <img width="600" alt="simulation_sample_FPV" src="./Documentation~/Images/simulation_sample_FPV.png">
 
 
 「2.」ボタンを押下すると三人称視点モードに変わります。<br>
-
 <img width="600" alt="simulation_sample_TPV" src="./Documentation~/Images/simulation_sample_TPV.png">
 
 「3」ボタンを押下すると見回しモードに変わります。<br>
-
 <img width="600" alt="simulation_sample_lookaround" src="./Documentation~/Images/simulation_sample_lookaround.png">
 
 
@@ -149,13 +146,14 @@ Built-in Rendering Pipeline、URPでは動作しません。<br>
 # 3. サンプルシーンのカスタマイズ方法
 ## 3-1. 3D都市モデルの変更
 
-シーンをカスタマイズし、PLATEAU都市モデルや配置物を変更したい場合は"Assets/Simulation.unity"をひらき、シーンを編集します。
+シーンをカスタマイズし、PLATEAU都市モデルや配置物を変更したい場合は"Assets/Simulation.unity"をひらき、シーンを編集します。<br>
 
 <img width="600" alt="multiplay_sample_scene" src="./Documentation~/Images/simulation_sample_scene.png">
+<br><br>
 
-PLATEAU都市モデルを変更する場合はヒエラルキーの中の"CesiumGeoreference"の中にあるPLATEAU都市モデルを削除した上で、ご自身でインポートしたPLATEU都市モデルを同じ場所に配置してください。
+PLATEAU都市モデルを変更する場合はヒエラルキーの中の"CesiumGeoreference"の中にあるPLATEAU都市モデルを削除した上で、ご自身でインポートしたPLATEU都市モデルを同じ場所に配置してください。<br>
 
-<img width="600" alt="multiplay_sample_customize_cesium" src="./Documentation~/Images/multiplay_sample_customize_cesium.png">
+<img width="600" alt="multiplay_sample_customize_cesium" src="./Documentation~/Images/simulation_sample_customize_cesium.png">
 
 > **Note**
 > PLATEAUの都市モデルのインポートはPLATEAU SDK for Unityを利用して行ってください。
@@ -172,21 +170,21 @@ PLATEAU都市モデルを変更する場合はヒエラルキーの中の"Cesium
 ## 4-1. サンプル都市モデルの作成
 
 ### PlateauSDKでの都市モデルの読み込み
-PlateauSDKを使用して都市モデルを読み込みます。
+PlateauSDKを使用して都市モデルを読み込みます。<br>
 
 <img width="400" alt="simulation_sample_import1" src="./Documentation~/Images/simulation_sample_import1.png">
 
 <img width="600" alt="simulation_sample_import2" src="./Documentation~/Images/simulation_sample_import2.png">
 
 ### RenderingToolkitでの環境システムの作成
-RenderingToolkitを使用して環境システムを作成します。ワンクリックで高品質なライティング環境がセットアップされます。
+RenderingToolkitを使用して環境システムを作成します。ワンクリックで高品質なライティング環境がセットアップされます。<br>
 
 <img width="400" alt="simulation_sample_create_environment" src="./Documentation~/Images/simulation_sample_create_environment.png">
 
 <img width="600" alt="simulation_sample_apply_environment" src="./Documentation~/Images/simulation_sample_apply_environment.png">
 
 ### AutoTexturingの実行
-ビルを選択し、RenderingToolkitのAutoTexturing機能を実行します。環境システムの Time of Day スライダーを調整して時間帯を夜にすると、街灯りが灯ります。雨や雪の天候変化にも対応します。
+ビルを選択し、RenderingToolkitのAutoTexturing機能を実行します。環境システムの Time of Day スライダーを調整して時間帯を夜にすると、街灯りが灯ります。雨や雪の天候変化にも対応します。<br>
 
 <img width="600" alt="simulation_sample_select_buildings" src="./Documentation~/Images/simulation_sample_select_buildings.png">
 
@@ -220,11 +218,12 @@ CesiumとMapToolkitの位置合わせ機能を利用してPlateauの地面タイ
 Plateauの地面のメッシュはところどころ凹んでいる部分がある為、Probuilderを使用して修正していきます。まずは地面のメッシュをProbuilderで編集可能なオブジェクトに変換します。
 
 <img width="600" alt="simulation_sample_road_cleanup1" src="./Documentation~/Images/simulation_sample_road_cleanup1.png">
-<br>
+<br><br>
 
-地面のメッシュを選択して メニュー >  Tools > ProBuilder > ProBuilder Window > Probuilderize　を実行
+地面のメッシュを選択して メニュー >  Tools > ProBuilder > ProBuilder Window > Probuilderize　を実行 <br>
+
 <img width="600" alt="simulation_sample_probuilder_fix2" src="./Documentation~/Images/simulation_sample_probuilder_fix2.png">
-<br>
+<br><br>
 
 凹んでいる箇所の頂点群を選択してY軸に対してスケーリングを行うと、凹んでいる箇所の頂点がフラットになります。これを必要な部分に行い地面のクリーンアップは完了です。
 
@@ -235,7 +234,7 @@ Plateauの地面のメッシュはところどころ凹んでいる部分があ�
 <img width="600" alt="simulation_sample_road_cleanup1" src="./Documentation~/Images/simulation_sample_road_cleanup1.png">
 
 <img width="600" alt="simulation_sample_road_cleanup2" src="./Documentation~/Images/simulation_sample_road_cleanup2.png">
-<br>
+<br><br>
 
 ### 道路の修正
 Plateauの道路メッシュを地面の上に移動します。道路はフラットな為、必要に応じて適宜Probuilderで調整を行います。次にサンプルのMaterialsフォルダーに用意された、Roadマテリアルを適用します。プラナーマッピングという手法で、UVがなくてもテクスチャの模様が平面的に張られます。
@@ -243,10 +242,10 @@ Plateauの道路メッシュを地面の上に移動します。道路はフラ�
 <img width="600" alt="simulation_sample_road_texturing1" src="./Documentation~/Images/simulation_sample_road_texturing1.png">
 
 <img width="600" alt="simulation_sample_road_texturing2" src="./Documentation~/Images/simulation_sample_road_texturing2.png">
-<br>
+<br><br>
 
 ### 建物の下のタイル敷設
-SandboxToolkitを使用して建物の下にタイルを配置します。こちらも建物の形状に合わせて適宜Probuilderで調整を行います。
+SandboxToolkitを使用して建物の下にタイル(Prop_Tile_01)を配置します。こちらも建物の形状に合わせて適宜Probuilderで調整を行います。
 
 <img width="600" alt="simulation_sample_tile_placement1" src="./Documentation~/Images/simulation_sample_tile_placement1.png">
 
