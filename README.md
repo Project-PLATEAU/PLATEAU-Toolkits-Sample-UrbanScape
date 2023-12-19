@@ -68,8 +68,8 @@ Built-in Rendering Pipeline、URPでは動作しません。<br>
 <img width="600" alt="multiplay_sample_scene" src="/Documentation~/Images/simulation_sample_scene.png">
 
 
-②最初にHDRPに関してのウィザードが表示されることがありますが、閉じてください。
-<img width="600" alt="multiplay_sample_hdrpwizard" src="/Documentation~/Images/multiplay_sample_hdrpwizard.png">
+②最初にHDRPに関してのウィザードが表示されることがありますが、閉じてください。<br>
+<img width="600" alt="multiplay_sample_hdrpwizard" src="./Documentation~/Images/simulation_sample_hdrpwizard.png">
 
 
 ③メニューよりFile > Build Settingsを選択します。<br>
