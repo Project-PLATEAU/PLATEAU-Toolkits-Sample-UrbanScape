@@ -153,11 +153,11 @@ Built-in Rendering Pipeline、URPでは動作しません。<br>
 
 シーンをカスタマイズし、PLATEAU都市モデルや配置物を変更したい場合は"Assets/Simulation.unity"をひらき、シーンを編集します。
 
-<img width="600" alt="multiplay_sample_scene" src="/Documentation~/Images/simulation_sample_scene.png">
+<img width="600" alt="simulation_sample_scene" src="/Documentation~/Images/simulation_sample_scene.png">
 
 PLATEAU都市モデルを変更する場合はヒエラルキーの中の"CesiumGeoreference"の中にあるPLATEAU都市モデルを削除した上で、ご自身でインポートしたPLATEU都市モデルを同じ場所に配置してください。
 
-<img width="600" alt="multiplay_sample_customize_cesium" src="/Documentation~/Images/multiplay_sample_customize_cesium.png">
+<img width="600" alt="simulation_sample_customize_cesium" src="/Documentation~/Images/simulation_sample_customize_cesium.png">
 
 > **Note**
 > PLATEAUの都市モデルのインポートはPLATEAU SDK for Unityを利用して行ってください。
