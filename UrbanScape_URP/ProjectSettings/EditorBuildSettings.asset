@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/UrbanScapeURP.unity
+    path: Assets/Scenes/UrbanScape.unity
     guid: abcff76084d945041b93f39b16c0af2f
   m_configObjects: {}
