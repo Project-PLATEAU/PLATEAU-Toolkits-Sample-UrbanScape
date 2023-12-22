@@ -191,7 +191,8 @@ RenderingToolkitを使用して環境システムを作成します。ワンク�
 
 
 ### CesiumでのPlateau地面タイルの読み込み
-CesiumとMapToolkitの位置合わせ機能を利用してPlateauの地面タイルを読み込み、遠景として使用します。ここまでのステップで基本的な景観設定が完了します。
+CesiumとMapsToolkitの位置合わせ機能を利用してPlateauの地面タイルを読み込み、遠景として使用します。ここまでのステップで基本的な景観設定が完了します。<br>
+※MapsToolkitの機能を使った位置合わせのやり方に関しては（[PLATEAUモデル位置合わせ - Maps Toolkit](https://github.com/Project-PLATEAU/PLATEAU-SDK-Toolkits-for-Unity/blob/main/maps_toolkit.md#1-plateau%E3%83%A2%E3%83%87%E3%83%AB%E4%BD%8D%E7%BD%AE%E5%90%88%E3%82%8F%E3%81%9B)）をご確認ください。
 
 <img width="600" alt="simulation_sample_cesium_tile2" src="./Documentation~/Images/simulation_sample_cesium_tile2.png">
 
@@ -203,7 +204,7 @@ CesiumとMapToolkitの位置合わせ機能を利用してPlateauの地面タイ
 本サンプルでは環境システムのパラメータをランタイムでGUIから制御しています。 <br>
 
 こちらはRenderingToolkitの環境システムのパラメーターになります。スクリプトを作成することでランタイムでの制御が可能です。<br>
-※各パラメーターについての詳しい説明は「[Rendering Toolkit 利用マニュアル](https://github.com/Project-PLATEAU/PLATEAU-SDK-Toolkits-for-Unity/blob/main/rendering_toolkit.md)」のページをご覧ください。 
+※各パラメーターについての詳しい説明は[Rendering Toolkit 利用マニュアル](https://github.com/Project-PLATEAU/PLATEAU-SDK-Toolkits-for-Unity/blob/main/rendering_toolkit.md)のページをご覧ください。 
 
 <img width="600" alt="simulation_sample_apply_environment" src="./Documentation~/Images/simulation_sample_ui_runtime1.png">
 
@@ -382,7 +383,8 @@ PLATEAUの道路モデルを地面の上に移動します。道路モデルのL
 SandboxToolkit標準のアセットを使用して建物の下にタイルを配置していきます。<br>
 <img width="600" alt="simulation_sample_tile_placement1" src="./Documentation~/Images/simulation_sample_tile_placement1.png">
 
-今回配置したアセットは「Prop_Tile_01」になります。配置方法に関しての詳しい解説は「[Sandbox Toolkit 利用マニュアル](https://github.com/Project-PLATEAU/PLATEAU-SDK-Toolkits-for-Unity/blob/main/sandbox_toolkit.md)」のページをご覧ください <br>
+今回配置したアセットは「Prop_Tile_01」になります。<br>
+配置方法に関しての詳しい解説は[Sandbox Toolkit 利用マニュアル](https://github.com/Project-PLATEAU/PLATEAU-SDK-Toolkits-for-Unity/blob/main/sandbox_toolkit.md)のページをご覧ください <br>
 <img width="600" alt="simulation_sample_tile_placement3" src="./Documentation~/Images/simulation_sample_tile_placement4.png">
 
 また、必要な場合は建物の形状に合わせて適宜Probuilderで調整を行います。<br>
@@ -400,7 +402,7 @@ SandboxToolkitからトラックを作成します。
 <img width="600" alt="simulation_sample_centerline1" src="./Documentation~/Images/simulation_sample_instantiate1.png">
 
 作成したトラックに PlateauSandboxTrackInstantiate コンポーネントを割り当てます。<br>
-※こちらのコンポーネントを使用したインスタンス配置に関しては、SandboxToolkitの標準機能になります。詳しい使い方に関しては「[Sandbox Toolkit 利用マニュアル](https://github.com/Project-PLATEAU/PLATEAU-SDK-Toolkits-for-Unity/blob/main/sandbox_toolkit.md)」のページもご覧ください。
+※こちらのコンポーネントを使用したインスタンス配置に関しては、SandboxToolkitの標準機能になります。詳しい使い方に関しては[Sandbox Toolkit 利用マニュアル](https://github.com/Project-PLATEAU/PLATEAU-SDK-Toolkits-for-Unity/blob/main/sandbox_toolkit.md)のページもご覧ください。
 <br>
 <img width="600" alt="simulation_sample_centerline1" src="./Documentation~/Images/simulation_sample_instantiate2.png">
 <br><br>
@@ -461,7 +463,7 @@ Unityのヒエラルキーでのカスタム選択機能は、複雑な階層を
 ##  4-3. プロップ/アバター/乗り物の配置
 
 Sandbox Toolkitの機能を使ってシーンにプロップ/アバター/乗り物を配置し、さまざまなカスタマイズができます。<br>
-詳しくは[Sandbox Toolkitの使い方](https://github.com/unity-shimizu/PLATEAU-SDK-Toolkits-for-Unity/blob/main/PlateauToolkit.Sandbox/README.md)をご確認ください。
+詳しくは[Sandbox Toolkit 利用マニュアル](https://github.com/Project-PLATEAU/PLATEAU-SDK-Toolkits-for-Unity/blob/main/sandbox_toolkit.md)をご確認ください。
 
 プロップの配置<br>
 <img width="600" alt="multiplay_sample_scene" src="./Documentation~/Images/simulation_sample_customize_props.png">
