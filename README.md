@@ -166,6 +166,9 @@ PLATEAU都市モデルを変更する場合はヒエラルキーの中の"Cesium
 
 ### PlateauSDKでの都市モデルの読み込み
 PlateauSDKを使用して都市モデルを読み込みます。
+[内山FB]以下の文章を挿入、適正化。
+サンプルでは、建築物モデルLOD2、地形モデルLOD1、道路モデルLOD1・・・を配置しました。
+地形モデルに対しては、PLATEAU SDKの機能を用いて空中写真を張り付けています。
 
 <img width="400" alt="simulation_sample_import1" src="./Documentation~/Images/simulation_sample_import1.png">
 
@@ -177,6 +180,9 @@ RenderingToolkitを使用して環境システムを作成します。ワンク�
 <img width="400" alt="simulation_sample_create_environment" src="./Documentation~/Images/simulation_sample_create_environment.png">
 
 <img width="600" alt="simulation_sample_apply_environment" src="./Documentation~/Images/simulation_sample_apply_environment.png">
+
+[内山FB]本サンプルでは環境システムのパラメータをUIから動かしてる？（それとも直接ライティングなどを動かしてる？）
+いずれにしても、サンプル上で行われている「GUIによって環境を変化させる」実装をどのようにやってるのか解説する。
 
 ### AutoTexturingの実行
 ビルを選択し、RenderingToolkitのAutoTexturing機能を実行します。環境システムの Time of Day スライダーを調整して時間帯を夜にすると、街灯りが灯ります。雨や雪の天候変化にも対応します。
@@ -210,17 +216,24 @@ CesiumとMapToolkitの位置合わせ機能を利用してPlateauの地面タイ
 ## 4-2. 道路や地面の調整のTips
 
 ### 地面の修正
-Plateauの地面のメッシュはところどころ凹んでいる部分がある為、Probuilderを使用して修正していきます。まずは地面のメッシュをProbuilderで編集可能なオブジェクトに変換します。
+[内山FB]文言修正
+PLATAEUの地形モデルは航空測量によって１メートル～１０メートルのメッシュで作成されているため、凸凹があります。
+現実の地形を再現する必要がない場合、地形が平滑化されていた方が見た目はよくなります。
+そこで、Probuilderを使用して地形モデルのメッシュを修正していきます。まずは地面のメッシュをProbuilderで編集可能なオブジェクトに変換します。
+なお、Cesium for Unityから取得した地形モデル（Terrain)は編集できませんので、ここではPLATEAU SDKを用いて配置した地形モデルを用います。
 
 <img width="600" alt="simulation_sample_road_cleanup1" src="./Documentation~/Images/simulation_sample_road_cleanup1.png">
 <br><br>
 
-地面のメッシュを選択して メニュー >  Tools > ProBuilder > ProBuilder Window > Probuilderize　を実行
+地形モデルのメッシュを選択して メニュー >  Tools > ProBuilder > ProBuilder Window > Probuilderize　を実行
 
 <img width="600" alt="simulation_sample_probuilder_fix2" src="./Documentation~/Images/simulation_sample_probuilder_fix2.png">
 <br><br>
 
 凹んでいる箇所の頂点群を選択してY軸に対してスケーリングを行うと、凹んでいる箇所の頂点がフラットになります。これを必要な部分に行い地面のクリーンアップは完了です。
+
+[内山FB]「スケーリングを行う」とは？具体的にPBの操作方法を追記してください。
+
 <br>
 <img width="600" alt="simulation_sample_probuilder_fix3" src="./Documentation~/Images/simulation_sample_probuilder_fix3.png"><br>
 <img width="600" alt="simulation_sample_probuilder_fix4" src="./Documentation~/Images/simulation_sample_probuilder_fix4.png"><br>
@@ -229,8 +242,10 @@ Plateauの地面のメッシュはところどころ凹んでいる部分があ�
 <br>
 
 ### 道路の修正
-Plateauの道路メッシュを地面の上に移動します。道路はフラットな為、必要に応じて適宜Probuilderで調整を行います。<br>
-次にサンプルのMaterialsフォルダーに用意された、「Common_Asphalt_01_MAT」マテリアルを適用します。プラナーマッピングという手法で、UVがなくてもテクスチャの模様が平面的に張られます。
+[内山FB]用語が間違ってる。
+PLATEAUの道路モデルを地面の上に移動します。道路モデルのLOD1-2は高さを持たないフラットなメッシュのため、必要に応じて適宜Probuilderで調整を行います。次にサンプルのMaterialsフォルダーに用意された、Roadマテリアルを適用します。プラナーマッピングという手法で、UVがなくてもテクスチャの模様が平面的に張られます。
+[内山FB]プラナーマッピング、についてもう少し詳しく説明する。どうやって設定したらいいのかなど、必要に応じ公式ドキュメント等のリファレンスをつける。
+<img width="600" alt="simulation_sample_road_texturing1" src="/Documentation~/Images/simulation_sample_road_texturing1.png">
 
 <img width="600" alt="simulation_sample_road_texturing1" src="./Documentation~/Images/simulation_sample_road_texturing1.png">
 
@@ -238,6 +253,9 @@ Plateauの道路メッシュを地面の上に移動します。道路はフラ�
 <br>
 
 ### 建物の下のタイル敷設
+SandboxToolkitを使用して建物の下にタイルを配置します。こちらも建物の形状に合わせて適宜Probuilderで調整を行います。
+[内山FB]Sandboxを使用して、とはどういう意味？もう少し詳しく説明する。
+
 SandboxToolkitを使用して建物の下にタイル「Prop_Tile_01」オブジェクトを配置します。こちらも建物の形状に合わせて適宜Probuilderで調整を行います。
 
 <img width="600" alt="simulation_sample_tile_placement1" src="./Documentation~/Images/simulation_sample_tile_placement1.png">
@@ -256,10 +274,14 @@ SandboxToolkitからトラックを作成します。
 <img width="600" alt="simulation_sample_centerline1" src="./Documentation~/Images/simulation_sample_instantiate1.png">
 
 作成したトラックに PlateauSandboxTrackInstantiate コンポーネントを割り当てます。
+[内山FB]このコンポネは本サンプル独自のもの？であればそのようにかく。
+
 <br>
 <img width="600" alt="simulation_sample_centerline1" src="./Documentation~/Images/simulation_sample_instantiate2.png">
 
 生成アイテムリストにインスタンス配置したいオブジェクトを登録します。
+[内山FB]そのオブジェクトはどっから用意したもの？Sandboxのデフォルトアセットなのか、今回作ったのか、解説する。
+
 <br>
 <img width="600" alt="simulation_sample_centerline1" src="./Documentation~/Images/simulation_sample_instantiate3.png">
 <br>
