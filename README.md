@@ -178,15 +178,36 @@ RenderingToolkitを使用して環境システムを作成します。ワンク�
 
 <img width="600" alt="simulation_sample_apply_environment" src="./Documentation~/Images/simulation_sample_apply_environment.png">
 
-### 環境システムのパラメーターをランタイムのGUIから制御
-本サンプルでは環境システムのパラメータをランタイムのGUIから制御しています。 <br>
+### AutoTexturingの実行
+ビルを選択し、RenderingToolkitのAutoTexturing機能を実行します。環境システムの Time of Day スライダーを調整して時間帯を夜にすると、街灯りが灯ります。雨や雪の天候変化にも対応します。
+
+<img width="600" alt="simulation_sample_select_buildings" src="./Documentation~/Images/simulation_sample_select_buildings.png">
+
+<img width="400" alt="simulation_sample_apply_texturing1" src="./Documentation~/Images/simulation_sample_apply_texturing1.png">
+
+<img width="400" alt="simulation_sample_apply_texturing2" src="./Documentation~/Images/simulation_sample_apply_texturing2.png">
+
+<img width="600" alt="simulation_sample_apply_texturing3" src="./Documentation~/Images/simulation_sample_apply_texturing3.png">
+
+
+### CesiumでのPlateau地面タイルの読み込み
+CesiumとMapToolkitの位置合わせ機能を利用してPlateauの地面タイルを読み込み、遠景として使用します。ここまでのステップで基本的な景観設定が完了します。
+
+<img width="600" alt="simulation_sample_cesium_tile2" src="./Documentation~/Images/simulation_sample_cesium_tile2.png">
+
+<img width="600" alt="simulation_sample_result1" src="./Documentation~/Images/simulation_sample_result1.png">
+
+<img width="600" alt="simulation_sample_result2" src="./Documentation~/Images/simulation_sample_result2.png">
+
+### 環境システムのパラメーターをランタイムでGUIから制御
+本サンプルでは環境システムのパラメータをランタイムでGUIから制御しています。 <br>
 
 こちらはRenderingToolkitの環境システムのパラメーターになります。スクリプトを作成することでランタイムでの制御が可能です。<br>
 ※各パラメーターについての詳しい説明は「[Rendering Toolkit 利用マニュアル](https://github.com/Project-PLATEAU/PLATEAU-SDK-Toolkits-for-Unity/blob/main/rendering_toolkit.md)」のページをご覧ください。 
 
 <img width="600" alt="simulation_sample_apply_environment" src="./Documentation~/Images/simulation_sample_ui_runtime1.png">
 
-ランタイムのGUIから環境システムのパラメーターを制御 <br>
+ランタイムGUIから環境システムのパラメーターを制御 <br>
 <img width="600" alt="simulation_sample_apply_environment" src="./Documentation~/Images/simulation_sample_ui_runtime2.gif">
 
 以下にサンプルに実装された時間の変更をGUIで制御するコードと天候の変更をGUIで制御するコードをご紹介します。
@@ -307,28 +328,6 @@ namespace PlateauSamples.UrbanScape
 コンポーネントにはUIの時間帯を制御するスライダーと天候(雨、雪、曇り)を制御するスライダーのゲームオブジェクトが割り当てられています。 <br>
 <img width="600" alt="simulation_sample_select_buildings" src="./Documentation~/Images/simulation_sample_ui_runtime4.png"><br>
 <img width="600" alt="simulation_sample_select_buildings" src="./Documentation~/Images/simulation_sample_ui_runtime3.png">
-
-### AutoTexturingの実行
-ビルを選択し、RenderingToolkitのAutoTexturing機能を実行します。環境システムの Time of Day スライダーを調整して時間帯を夜にすると、街灯りが灯ります。雨や雪の天候変化にも対応します。
-
-<img width="600" alt="simulation_sample_select_buildings" src="./Documentation~/Images/simulation_sample_select_buildings.png">
-
-<img width="400" alt="simulation_sample_apply_texturing1" src="./Documentation~/Images/simulation_sample_apply_texturing1.png">
-
-<img width="400" alt="simulation_sample_apply_texturing2" src="./Documentation~/Images/simulation_sample_apply_texturing2.png">
-
-<img width="600" alt="simulation_sample_apply_texturing3" src="./Documentation~/Images/simulation_sample_apply_texturing3.png">
-
-
-### CesiumでのPlateau地面タイルの読み込み
-CesiumとMapToolkitの位置合わせ機能を利用してPlateauの地面タイルを読み込み、遠景として使用します。ここまでのステップで基本的な景観設定が完了します。
-
-<img width="600" alt="simulation_sample_cesium_tile2" src="./Documentation~/Images/simulation_sample_cesium_tile2.png">
-
-<img width="600" alt="simulation_sample_result1" src="./Documentation~/Images/simulation_sample_result1.png">
-
-<img width="600" alt="simulation_sample_result2" src="./Documentation~/Images/simulation_sample_result2.png">
-
 
 ### 窓の調整
 ビルの形状によっては窓が不自然に見える場合があるため、RenderingToolkitの窓の調整機能を使用して調整が可能です。
