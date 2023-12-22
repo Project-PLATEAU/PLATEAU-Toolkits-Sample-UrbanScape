@@ -257,8 +257,28 @@ namespace PlateauSamples.UrbanScape
         }
     }
 }
-
 ```
+<br>
+TimeOfDaySliderController` クラス内で、スライダーの値に応じて環境の時間帯を変更する重要な部分は以下の通りです。<br>
+このメソッド HandleSliderValueChanged は、ユーザーがUIスライダーを操作するときに呼び出されます。スライダーの値（value）は 環境システムの TimeOfDay パラメーターに設定され、これにより環境システムの時間帯が変更されます。
+
+```csharp
+public class TimeOfDaySliderController : MonoBehaviour
+{
+    // ...
+
+    // 時間帯スライダーの値が変更された時の処理
+    public void HandleSliderValueChanged(float value)
+    {
+        // スライダーの値を環境システムの時間帯のパラメーター(TimeOfDay)に反映
+        m_EnvironmentController.m_TimeOfDay = value;
+    }
+
+    // ...
+}
+```
+<br>
+
 以下に示すのは `WeatherSliderController` コンポーネントのコードです。このコンポーネントでは、雨、雪、曇りの各スライダーの値に応じて環境システムの天候を制御します。
 
 ```csharp
@@ -325,6 +345,49 @@ namespace PlateauSamples.UrbanScape
     }
 }
 ```
+<br>
+WeatherSliderController クラス内で、各スライダー（雨、曇り、雪）の値に応じて環境システムのパラメーターを変更する重要な部分は以下の通りです。<br>
+この各メソッドは、ユーザーがUIスライダーを操作するときに呼び出されます。スライダーの値（value）は 環境システムの（雨、曇り、雪） パラメーターに設定され、これにより環境システムの天候が変更されます。
+
+```csharp
+public class WeatherSliderController : MonoBehaviour
+{
+    // ...
+
+    // 雨スライダーの値が変更された時の処理
+    void HandleRainSliderChanged(float value)
+    {
+        if (m_CanvasGroup.alpha > 0)
+        {
+            // スライダーの値を環境システムの雨のパラメーター(Rain)に反映
+            m_EnvironmentController.m_Rain = value;
+        }
+    }
+
+    // 曇りスライダーの値が変更された時の処理
+    void HandlecloudySliderChanged(float value)
+    {
+        if (m_CanvasGroup.alpha > 0)
+        {
+            // スライダーの値を環境システムの曇りのパラメーター(Cloud)に反映
+            m_EnvironmentController.m_Cloud = value;
+        }
+    }
+
+    // 雪スライダーの値が変更された時の処理
+    void HandleSnowSliderChanged(float value)
+    {
+        if (m_CanvasGroup.alpha > 0)
+        {
+            // スライダーの値を環境システムの雪のパラメーター(Snow)に反映
+            m_EnvironmentController.m_Snow = value;
+        }
+    }
+
+    // ...
+}
+```
+
 これらのコンポーネントは Canvas > ViewerPanelゲームオブジェクトにアタッチされています。 <br>
 コンポーネントにはUIの時間帯を制御するスライダーと天候(雨、雪、曇り)を制御するスライダーのゲームオブジェクトが割り当てられています。 <br>
 <img width="600" alt="simulation_sample_select_buildings" src="./Documentation~/Images/simulation_sample_ui_runtime4.png"><br>
