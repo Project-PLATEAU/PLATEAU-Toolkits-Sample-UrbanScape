@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1225059790132317834}
   - component: {fileID: 2787608280522588463}
   - component: {fileID: 93280092052813285}
-  - component: {fileID: -4647296575107563413}
+  - component: {fileID: -4196381433508780063}
   m_Layer: 0
   m_Name: Prop_Tile_01
   m_TagString: Untagged
@@ -85,7 +85,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &-4647296575107563413
+--- !u!114 &-4196381433508780063
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
