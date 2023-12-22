@@ -437,8 +437,8 @@ PLATEAUの道路モデルを地面の上に移動します。道路モデルのL
 <img width="600" alt="simulation_sample_road_texturing2" src="./Documentation~/Images/simulation_sample_road_texturing3.png">
 <br>
 
-※プラナーマッピングの手法に関しての解説はUniyJapanの動画 [「投影マッピングを使ったテクスチャーテクニック」](https://www.youtube.com/watch?v=nMAMniAlJJ4)をご覧ください。<br>
-また、解説動画では、トリプラナーマッピングについても解説されています。トリプラナーマッピングを使用したい場合は。マテリアルの「Base UV Set」パラメーターを「TriPlanar」に変更してください<br>
+※プラナーマッピングの手法に関しての解説はUnity Japanの動画 [「投影マッピングを使ったテクスチャーテクニック」](https://www.youtube.com/watch?v=nMAMniAlJJ4)をご覧ください。<br>
+また、解説動画では、トリプラナーマッピングについても解説されています。トリプラナーマッピングを使用したい場合は。マテリアルの「Base UV Set」パラメーターを「Triplanar」に変更してください<br>
 <img width="600" alt="simulation_sample_road_texturing2" src="./Documentation~/Images/simulation_sample_road_texturing4.png">
 
 ### 建物の下のタイル敷設
