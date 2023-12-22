@@ -89,14 +89,12 @@ Built-in Rendering Pipeline、URPでは動作しません。<br>
 <img width="600" alt="simulation_sample_title" src="./Documentation~/Images/simulation_sample_title.png">
 
 ②ホームビューに遷移します。このビューではマウス操作によってカメラを回転させることができます。<br>
-<img width="600" alt="simulation_sample_firstview" src="./Documentation~/Images/simulation_sample_firstview.png">
-
+<img width="600" alt="simulation_sample_firstview" src="./Documentation~/Images/simulation_sample_firstview.png"><br>
 <img width="600" alt="simulation_sample_rotated" src="./Documentation~/Images/simulation_sample_rotated.png">
 <br><br>
 
 ③画面右の時間帯変更スライダーを調整すると、シーンの時間帯を変更することができます。<br>
-<img width="600" alt="simulation_sample_mornig" src="./Documentation~/Images/simulation_sample_mornig.png">
-
+<img width="600" alt="simulation_sample_mornig" src="./Documentation~/Images/simulation_sample_mornig.png"><br>
 <img width="600" alt="simulation_sample_night" src="./Documentation~/Images/simulation_sample_night.png">
 <br><br>
 
@@ -166,8 +164,7 @@ PLATEAU都市モデルを変更する場合はヒエラルキーの中の"Cesium
 
 ### PlateauSDKでの都市モデルの読み込み
 PlateauSDKを使用して都市モデルを読み込みます。
-[内山FB]以下の文章を挿入、適正化。
-サンプルでは、建築物モデルLOD2、地形モデルLOD1、道路モデルLOD1・・・を配置しました。
+サンプルでは、建築物モデルLOD2、地形モデルLOD1、道路モデルLOD1を配置しました。
 地形モデルに対しては、PLATEAU SDKの機能を用いて空中写真を張り付けています。
 
 <img width="400" alt="simulation_sample_import1" src="./Documentation~/Images/simulation_sample_import1.png">
@@ -181,8 +178,135 @@ RenderingToolkitを使用して環境システムを作成します。ワンク�
 
 <img width="600" alt="simulation_sample_apply_environment" src="./Documentation~/Images/simulation_sample_apply_environment.png">
 
-[内山FB]本サンプルでは環境システムのパラメータをUIから動かしてる？（それとも直接ライティングなどを動かしてる？）
-いずれにしても、サンプル上で行われている「GUIによって環境を変化させる」実装をどのようにやってるのか解説する。
+### 環境システムのパラメーターをランタイムのGUIから制御
+本サンプルでは環境システムのパラメータをランタイムのGUIから制御しています。 <br>
+
+こちらはRenderingToolkitの環境システムのパラメーターになります。スクリプトを作成することでランタイムでの制御が可能です。<br>
+※各パラメーターについての詳しい説明は「[Rendering Toolkit 利用マニュアル](https://github.com/Project-PLATEAU/PLATEAU-SDK-Toolkits-for-Unity/blob/main/rendering_toolkit.md)」のページをご覧ください。 
+
+<img width="600" alt="simulation_sample_apply_environment" src="./Documentation~/Images/simulation_sample_ui_runtime1.png">
+
+ランタイムのGUIから環境システムのパラメーターを制御 <br>
+<img width="600" alt="simulation_sample_apply_environment" src="./Documentation~/Images/simulation_sample_ui_runtime2.gif">
+
+以下にサンプルに実装された時間の変更をGUIで制御するコードと天候の変更をGUIで制御するコードをご紹介します。
+
+以下のコードは `TimeOfDaySliderController` コンポーネントを示しています。このコンポーネントは、時間の変更を制御するためのスライダーの値が変更されたときに、環境システムにその値を反映させます。
+
+```csharp
+using UnityEngine;
+using UnityEngine.UI;
+using PlateauToolkit.Rendering;
+
+namespace PlateauSamples.UrbanScape
+{
+    public class TimeOfDaySliderController : MonoBehaviour
+    {
+        [SerializeField] Slider m_Slider;
+        EnvironmentController m_EnvironmentController;
+
+        void Awake()
+        {
+            if (m_Slider == null)
+            {
+                return;
+            }
+
+            m_EnvironmentController = FindObjectOfType<EnvironmentController>();
+            if (m_EnvironmentController == null)
+            {
+                return;
+            }
+
+            m_Slider.onValueChanged.AddListener(HandleSliderValueChanged);
+        }
+
+        public void HandleSliderValueChanged(float value)
+        {
+            m_EnvironmentController.m_TimeOfDay = value;
+        }
+
+        void OnDestroy()
+        {
+            if (m_Slider != null)
+            {
+                m_Slider.onValueChanged.RemoveListener(HandleSliderValueChanged);
+            }
+        }
+    }
+}
+
+```
+以下に示すのは `WeatherSliderController` コンポーネントのコードです。このコンポーネントでは、雨、雪、曇りの各スライダーの値に応じて環境システムの天候を制御します。
+
+```csharp
+using UnityEngine;
+using UnityEngine.UI;
+using PlateauToolkit.Rendering;
+
+namespace PlateauSamples.UrbanScape
+{
+    public class WeatherSliderController : MonoBehaviour
+    {
+        [SerializeField] Slider m_RainSlider;
+        [SerializeField] Slider m_SnowSlider;
+        [SerializeField] Slider m_CloudySlider;
+        [SerializeField] CanvasGroup m_CanvasGroup;
+        EnvironmentController m_EnvironmentController;
+
+        void Awake()
+        {
+            m_EnvironmentController = FindObjectOfType<EnvironmentController>();
+            if (m_EnvironmentController == null)
+            {
+                return;
+            }
+        }
+
+        void Start()
+        {
+            m_RainSlider.onValueChanged.AddListener(HandleRainSliderChanged);
+            m_CloudySlider.onValueChanged.AddListener(HandlecloudySliderChanged);
+            m_SnowSlider.onValueChanged.AddListener(HandleSnowSliderChanged);
+        }
+
+        void HandleRainSliderChanged(float value)
+        {
+            if (m_CanvasGroup.alpha > 0)
+            {
+                m_EnvironmentController.m_Rain = value;
+            }
+        }
+
+        void HandlecloudySliderChanged(float value)
+        {
+            if (m_CanvasGroup.alpha > 0)
+            {
+                m_EnvironmentController.m_Cloud = value;
+            }
+        }
+
+        void HandleSnowSliderChanged(float value)
+        {
+            if (m_CanvasGroup.alpha > 0)
+            {
+                m_EnvironmentController.m_Snow = value;
+            }
+        }
+
+        void OnDestroy()
+        {
+            m_RainSlider.onValueChanged.RemoveListener(HandleRainSliderChanged);
+            m_CloudySlider.onValueChanged.RemoveListener(HandlecloudySliderChanged);
+            m_SnowSlider.onValueChanged.RemoveListener(HandleSnowSliderChanged);
+        }
+    }
+}
+```
+これらのコンポーネントは Canvas > ViewerPanelゲームオブジェクトにアタッチされています。 <br>
+コンポーネントにはUIの時間帯を制御するスライダーと天候(雨、雪、曇り)を制御するスライダーのゲームオブジェクトが割り当てられています。 <br>
+<img width="600" alt="simulation_sample_select_buildings" src="./Documentation~/Images/simulation_sample_ui_runtime4.png"><br>
+<img width="600" alt="simulation_sample_select_buildings" src="./Documentation~/Images/simulation_sample_ui_runtime3.png">
 
 ### AutoTexturingの実行
 ビルを選択し、RenderingToolkitのAutoTexturing機能を実行します。環境システムの Time of Day スライダーを調整して時間帯を夜にすると、街灯りが灯ります。雨や雪の天候変化にも対応します。
@@ -216,7 +340,6 @@ CesiumとMapToolkitの位置合わせ機能を利用してPlateauの地面タイ
 ## 4-2. 道路や地面の調整のTips
 
 ### 地面の修正
-[内山FB]文言修正
 PLATAEUの地形モデルは航空測量によって１メートル～１０メートルのメッシュで作成されているため、凸凹があります。
 現実の地形を再現する必要がない場合、地形が平滑化されていた方が見た目はよくなります。
 そこで、Probuilderを使用して地形モデルのメッシュを修正していきます。まずは地面のメッシュをProbuilderで編集可能なオブジェクトに変換します。
@@ -230,9 +353,8 @@ PLATAEUの地形モデルは航空測量によって１メートル～１０メ�
 <img width="600" alt="simulation_sample_probuilder_fix2" src="./Documentation~/Images/simulation_sample_probuilder_fix2.png">
 <br><br>
 
-凹んでいる箇所の頂点群を選択してY軸に対してスケーリングを行うと、凹んでいる箇所の頂点がフラットになります。これを必要な部分に行い地面のクリーンアップは完了です。
-
-[内山FB]「スケーリングを行う」とは？具体的にPBの操作方法を追記してください。
+凹んでいる箇所の頂点群を選択してY軸に対してスケーリングを行うと、凹んでいる箇所の頂点がフラットになります。これを必要な部分に行い地面のクリーンアップは完了です。<br>
+<img width="600" alt="simulation_sample_probuilder_fix3" src="./Documentation~/Images/simulation_sample_road_probuilder1.gif"><br>
 
 <br>
 <img width="600" alt="simulation_sample_probuilder_fix3" src="./Documentation~/Images/simulation_sample_probuilder_fix3.png"><br>
@@ -242,26 +364,31 @@ PLATAEUの地形モデルは航空測量によって１メートル～１０メ�
 <br>
 
 ### 道路の修正
-[内山FB]用語が間違ってる。
-PLATEAUの道路モデルを地面の上に移動します。道路モデルのLOD1-2は高さを持たないフラットなメッシュのため、必要に応じて適宜Probuilderで調整を行います。次にサンプルのMaterialsフォルダーに用意された、Roadマテリアルを適用します。プラナーマッピングという手法で、UVがなくてもテクスチャの模様が平面的に張られます。
-[内山FB]プラナーマッピング、についてもう少し詳しく説明する。どうやって設定したらいいのかなど、必要に応じ公式ドキュメント等のリファレンスをつける。
-<img width="600" alt="simulation_sample_road_texturing1" src="/Documentation~/Images/simulation_sample_road_texturing1.png">
-
+PLATEAUの道路モデルを地面の上に移動します。道路モデルのLOD1-2は高さを持たないフラットなメッシュのため、必要に応じて適宜Probuilderで調整を行います。<br>
 <img width="600" alt="simulation_sample_road_texturing1" src="./Documentation~/Images/simulation_sample_road_texturing1.png">
 
-<img width="600" alt="simulation_sample_road_texturing2" src="./Documentation~/Images/simulation_sample_road_texturing2.png">
+次にサンプルのMaterialsフォルダーに用意された、「Common_Asphalt_01_MAT」マテリアルを適用します。<br>
+プラナーマッピングという手法で、UVが存在しない場合でもテクスチャの模様を平面的に張ることが可能です。<br>
+<img width="600" alt="simulation_sample_road_texturing1" src="./Documentation~/Images/simulation_sample_road_texturing2.png">
+
+プラナーマッピングへの変更方法に関してはマテリアの「Base UV Set」パラメーターを「Planar」に設定します。<br>
+<img width="600" alt="simulation_sample_road_texturing2" src="./Documentation~/Images/simulation_sample_road_texturing3.png">
 <br>
 
+※プラナーマッピングの手法に関しての解説はUniyJapanの動画 [「投影マッピングを使ったテクスチャーテクニック」](https://www.youtube.com/watch?v=nMAMniAlJJ4)をご覧ください。<br>
+また、解説動画では、トリプラナーマッピングについても解説されています。トリプラナーマッピングを使用したい場合は。マテリアルの「Base UV Set」パラメーターを「TriPlanar」に変更してください<br>
+<img width="600" alt="simulation_sample_road_texturing2" src="./Documentation~/Images/simulation_sample_road_texturing4.png">
+
 ### 建物の下のタイル敷設
-SandboxToolkitを使用して建物の下にタイルを配置します。こちらも建物の形状に合わせて適宜Probuilderで調整を行います。
-[内山FB]Sandboxを使用して、とはどういう意味？もう少し詳しく説明する。
-
-SandboxToolkitを使用して建物の下にタイル「Prop_Tile_01」オブジェクトを配置します。こちらも建物の形状に合わせて適宜Probuilderで調整を行います。
-
+SandboxToolkit標準のアセットを使用して建物の下にタイルを配置していきます。<br>
 <img width="600" alt="simulation_sample_tile_placement1" src="./Documentation~/Images/simulation_sample_tile_placement1.png">
 
-<img width="600" alt="simulation_sample_tile_placement2" src="./Documentation~/Images/simulation_sample_tile_placement2.png">
+今回配置したアセットは「Prop_Tile_01」になります。配置方法に関しての詳しい解説は「[Sandbox Toolkit 利用マニュアル](https://github.com/Project-PLATEAU/PLATEAU-SDK-Toolkits-for-Unity/blob/main/sandbox_toolkit.md)」のページをご覧ください <br>
+<img width="600" alt="simulation_sample_tile_placement3" src="./Documentation~/Images/simulation_sample_tile_placement4.png">
 
+また、必要な場合は建物の形状に合わせて適宜Probuilderで調整を行います。<br>
+当サンプルでは、Unity標準のトランスフォームのスケールの数値のみを使用して大きさを調整しています。<br>
+<img width="600" alt="simulation_sample_tile_placement2" src="./Documentation~/Images/simulation_sample_tile_placement2.png"><br>
 <img width="600" alt="simulation_sample_tile_placement3" src="./Documentation~/Images/simulation_sample_tile_placement3.png">
 <br>
 
@@ -273,15 +400,16 @@ SandboxToolkitからトラックを作成します。
 <br>
 <img width="600" alt="simulation_sample_centerline1" src="./Documentation~/Images/simulation_sample_instantiate1.png">
 
-作成したトラックに PlateauSandboxTrackInstantiate コンポーネントを割り当てます。
-[内山FB]このコンポネは本サンプル独自のもの？であればそのようにかく。
-
+作成したトラックに PlateauSandboxTrackInstantiate コンポーネントを割り当てます。<br>
+※こちらのコンポーネントを使用したインスタンス配置に関しては、SandboxToolkitの標準機能になります。詳しい使い方に関しては「[Sandbox Toolkit 利用マニュアル](https://github.com/Project-PLATEAU/PLATEAU-SDK-Toolkits-for-Unity/blob/main/sandbox_toolkit.md)」のページもご覧ください。
 <br>
 <img width="600" alt="simulation_sample_centerline1" src="./Documentation~/Images/simulation_sample_instantiate2.png">
+<br><br>
 
-生成アイテムリストにインスタンス配置したいオブジェクトを登録します。
-[内山FB]そのオブジェクトはどっから用意したもの？Sandboxのデフォルトアセットなのか、今回作ったのか、解説する。
-
+SandboxToolkitのデフォルトアセットの「Prop_Marking_StraightLine_01」を<br>
+追加したコンポーネントの「生成アイテムリスト」にドラッグアンドドロップし、インスタンス配置したいオブジェクトを登録します。
+<br>
+<img width="600" alt="simulation_sample_centerline1" src="./Documentation~/Images/simulation_sample_instantiate7.png">
 <br>
 <img width="600" alt="simulation_sample_centerline1" src="./Documentation~/Images/simulation_sample_instantiate3.png">
 <br>
