@@ -417,8 +417,7 @@ PLATAEUの地形モデルは航空測量によって１メートル～１０メ�
 <br><br>
 
 凹んでいる箇所の頂点群を選択してY軸に対してスケーリングを行うと、凹んでいる箇所の頂点がフラットになります。これを必要な部分に行い地面のクリーンアップは完了です。<br>
-<img width="600" alt="simulation_sample_probuilder_fix3" src="./Documentation~/Images/simulation_sample_road_probuilder1.gif"><br>
-
+<img width="600" alt="simulation_sample_probuilder_fix3" src="./Documentation~/Images/simulation_sample_road_probuilder1.gif"> <br>
 <br>
 <img width="600" alt="simulation_sample_probuilder_fix3" src="./Documentation~/Images/simulation_sample_probuilder_fix3.png"><br>
 <img width="600" alt="simulation_sample_probuilder_fix4" src="./Documentation~/Images/simulation_sample_probuilder_fix4.png"><br>
