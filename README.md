@@ -195,11 +195,9 @@ RenderingToolkitを使用して環境システムを作成します。ワンク�
 CesiumとMapsToolkitの位置合わせ機能を利用してPlateauの地面タイルを読み込み、遠景として使用します。ここまでのステップで基本的な景観設定が完了します。<br>
 ※MapsToolkitの機能を使った位置合わせのやり方に関しては（[PLATEAUモデル位置合わせ - Maps Toolkit](https://github.com/Project-PLATEAU/PLATEAU-SDK-Toolkits-for-Unity/blob/main/maps_toolkit.md#1-plateau%E3%83%A2%E3%83%87%E3%83%AB%E4%BD%8D%E7%BD%AE%E5%90%88%E3%82%8F%E3%81%9B)）をご確認ください。
 
-<img width="600" alt="simulation_sample_cesium_tile2" src="./Documentation~/Images/simulation_sample_cesium_tile2.png">
-
-<img width="600" alt="simulation_sample_result1" src="./Documentation~/Images/simulation_sample_result1.png">
-
-<img width="600" alt="simulation_sample_result2" src="./Documentation~/Images/simulation_sample_result2.png">
+<img width="600" alt="simulation_sample_cesium_tile2" src="./Documentation~/Images/simulation_sample_cesium_tile2.png"><br>
+<img width="600" alt="simulation_sample_result1" src="./Documentation~/Images/simulation_sample_result1.png"><br>
+<img width="600" alt="simulation_sample_result2" src="./Documentation~/Images/simulation_sample_result2.png"><br>
 
 ### 環境システムのパラメーターをランタイムでGUIから制御
 本サンプルでは環境システムのパラメータをランタイムでGUIから制御しています。 <br>
