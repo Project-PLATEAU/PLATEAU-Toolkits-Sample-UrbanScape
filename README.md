@@ -61,8 +61,9 @@ PLATEAU-SDK-Toolkits for Unityを用いたシミュレーションアプリケ�
 
 ### Rendering Pipeline
 - HDRP
+- URP
 
-Built-in Rendering Pipeline、URPでは動作しません。<br>
+Built-in Rendering Pipelineでは動作しません。<br>
 
 ## 2-2. サンプルシーンのビルド方法
 
@@ -447,7 +448,11 @@ SandboxToolkit標準のアセットを使用して建物の下にタイルを配
 
 今回配置したアセットは「Prop_Tile_01」になります。<br>
 配置方法に関しての詳しい解説は[Sandbox Toolkit 利用マニュアル](https://github.com/Project-PLATEAU/PLATEAU-SDK-Toolkits-for-Unity/blob/main/sandbox_toolkit.md)のページをご覧ください <br>
-<img width="600" alt="simulation_sample_tile_placement3" src="./Documentation~/Images/simulation_sample_tile_placement4.png">
+<img width="600" alt="simulation_sample_tile_placement3" src="./Documentation~/Images/simulation_sample_tile_placement4.png"> <br>
+> **Note**
+> ※ 当サンプルリリース時点では「Unity 2021.3.30f1」を使用しておりますが、UnityEditorの不具合で、Sandboxの標準アセットのアイコン表示が黒くなってしまうバグが報告されております。<br>
+もし発生した場合はUnity 2021.3.31f1にアップデートすることで改善されます。次回アップデートにて当サンプルもUnityEditorのバージョンアップを実施予定です。
+<br>
 
 また、必要な場合は建物の形状に合わせて適宜Probuilderで調整を行います。<br>
 当サンプルでは、Unity標準のトランスフォームのスケールの数値のみを使用して大きさを調整しています。<br>
