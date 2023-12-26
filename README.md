@@ -129,7 +129,7 @@ Built-in Rendering Pipelineでは動作しません。
 「3」ボタンを押下すると見回しモードに変わります。<br>
 <img width="600" alt="simulation_sample_lookaround" src="./Documentation~/Images/simulation_sample_lookaround.png">
 
-詳しくは Sandbox Toolkit の[カメラインタラクションについて](https://github.com/unity-shimizu/PLATEAU-SDK-Toolkits-for-Unity/blob/main/PlateauToolkit.Sandbox/README.md#3-%E3%82%AB%E3%83%A1%E3%83%A9%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%A9%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3%E6%A9%9F%E8%83%BD)をご確認ください。
+詳しくは Sandbox Toolkit の[カメラインタラクションについて](https://github.com/Project-PLATEAU/PLATEAU-SDK-Toolkits-for-Unity/tree/main/PlateauToolkit.Sandbox#3-%E3%82%AB%E3%83%A1%E3%83%A9%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%A9%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3%E6%A9%9F%E8%83%BD)をご確認ください。
 
 # 3. サンプルプロジェクトのカスタマイズ方法
 ## 3-1. 3D都市モデルの変更
