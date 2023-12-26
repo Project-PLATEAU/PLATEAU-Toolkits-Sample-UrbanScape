@@ -1,15 +1,13 @@
 # Urban Scape
+### PLATEAU-SDK-Toolkits-for-Unityを使ったサンプルプロジェクト
 <img width="1080" alt="urbanscape_kv" src="./Documentation~/Images/urbanscape_kv.png">
 
-### PLATEAU-SDK-Toolkits-for-Unityを使ったサンプルアプリケーション
-
-PLATEAU-SDK-Toolkits for Unityを用いたシミュレーションアプリケーションの作成方法についてご紹介します。
 
 ### 更新履歴
 
 | 更新日時 | 更新内容 |
 | :--- | :--- |
-|  2023/12/22  |  UrbanScape　初回リリース|
+|  2023/12/25  |  UrbanScape　初回リリース|
 
 # 目次
 <!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=2 orderedList=false} -->
