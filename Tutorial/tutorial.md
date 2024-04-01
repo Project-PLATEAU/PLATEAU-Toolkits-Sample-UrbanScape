@@ -171,7 +171,7 @@ PLATEAU の読み込みが終わったら、アプリを実行します。（右
 
 Rendering Toolkit のパネルを表示します（PLATEAU - PLATEAU Toolkit - Rendering Toolkit）<br>
 
-<img width="800" alt="redering_toolkit_maintab" src="./Images/redering_toolkit_maintab.png">
+<img width="800" alt="rendering_toolkit_maintab" src="./Images/rendering_toolkit_maintab.png">
 
 環境要素ボタンを押します。（モバイル用のパーティクルシステムに付いての確認は「はい」で対応）天気と時間をコントロールする環境システムが表示されます。<br>
 <img width="800" alt="timeofday_slider" src="./Images/timeofday_slider.png">
