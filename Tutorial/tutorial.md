@@ -1,68 +1,68 @@
 # 都市風景ビューワー　チュートリアル
      
 # 目次
-- [都市風景ビューワー　チュートリアルの概要](#都市風景ビューワーチュートリアルの概要)
-    - [チュートリアルの目的](#チュートリアルの目的)
-    - [開発環境](#開発環境)
-    - [準備](#準備)
-- [環境作成](#環境作成)
-    - [プロジェクト作成](#プロジェクト作成)
-    - [PLATEAU SDKの追加](#PLATEAUSDKの追加)
-    - [3D都市モデルの読み込み](#3D都市モデルの読み込み)
-    - [視点移動機能の追加](#視点移動機能の追加)
-    - [初期カメラ位置の変更](#初期カメラ位置の変更)
-- [天気・時間コントロール機能の実装](#天気・時間コントロール機能の実装)
-    - [Rendering Toolkitの追加](#RenderingToolkitの追加)
-    - [テクスチャ設定](#テクスチャ設定)
-    - [背景画像の追加](#背景画像の追加)
-    - [雪スライダーの設定と機能の実装](#雪スライダーの設定と機能の実装)
-    - [追加のスライダー実装](#追加のスライダー実装)
-    - [時間スライダーの追加と実装](#時間スライダーの追加と実装)
-- [定点カメラ機能の実装](#天気・時間コントロール機能の実装)
-    - [上空カメラの追加](#上空カメラの追加)
-    - [カメラボタンの追加](#カメラボタンの追加)
-    - [切り替え機能の実装](#切り替え機能の実装)
-- [人・車モデルの実装](#人・車モデルの実装)
-    - [Sandbox Toolkitでのアイテムの追加](#SandboxToolkitでのアイテムの追加)
-    - [トラックの作成](#トラックの作成)
-    - [オブジェクトの配置](#オブジェクトの配置)
-    - [車視点、人視点への切り替え](#車視点、人視点への切り替え)
-    - [視点切り替えボタンの実装](#視点切り替えボタンの実装)
+- [1.都市風景ビューワー　チュートリアルの概要](#1.都市風景ビューワーチュートリアルの概要)
+    - [1-1.チュートリアルの目的](#1-1.チュートリアルの目的)
+    - [1-2.開発環境](#1-2.開発環境)
+    - [1-3.準備](#1-3.準備)
+- [2.環境作成](#2.環境作成)
+    - [2-1.プロジェクト作成](#2-1.プロジェクト作成)
+    - [2-2.PLATEAU SDKの追加](#2-2.PLATEAUSDKの追加)
+    - [2-3.3D都市モデルの読み込み](#2-3.3D都市モデルの読み込み)
+    - [2-4.視点移動機能の追加](#2-4.視点移動機能の追加)
+    - [2-5.初期カメラ位置の変更](#2-5.初期カメラ位置の変更)
+- [3.天気・時間コントロール機能の実装](#3.天気・時間コントロール機能の実装)
+    - [3-1.Rendering Toolkitの追加](#3-1.RenderingToolkitの追加)
+    - [3-2.テクスチャ設定](#3-2.テクスチャ設定)
+    - [3-3.背景画像の追加](#3-3.背景画像の追加)
+    - [3-4.雪スライダーの設定と機能の実装](#3-4.雪スライダーの設定と機能の実装)
+    - [3-5.追加のスライダー実装](#3-5.追加のスライダー実装)
+    - [3-6.時間スライダーの追加と実装](#3-6.時間スライダーの追加と実装)
+- [4.定点カメラ機能の実装](#4.天気・時間コントロール機能の実装)
+    - [4-1.上空カメラの追加](#4-1.上空カメラの追加)
+    - [4-2.カメラボタンの追加](#4-2.カメラボタンの追加)
+    - [4-3.切り替え機能の実装](#4-3.切り替え機能の実装)
+- [5.人・車モデルの実装](#5.人・車モデルの実装)
+    - [5-1.Sandbox Toolkitでのアイテムの追加](#5-1.SandboxToolkitでのアイテムの追加)
+    - [5-2.トラックの作成](#5-2.トラックの作成)
+    - [5-3.オブジェクトの配置](#5-3.オブジェクトの配置)
+    - [5-4.車視点、人視点への切り替え](#5-4.車視点、人視点への切り替え)
+    - [5-5.視点切り替えボタンの実装](#5-5.視点切り替えボタンの実装)
  
-# 都市風景ビューワー　チュートリアルの概要
-## チュートリアルの目的
+# 1.都市風景ビューワー　チュートリアルの概要
+## 1-1.チュートリアルの目的
 PLATEAU の都市モデルを使ったユースケースでは、都市の様々なシミュレーション、まちづくりのための環境、ゲームなどが多く見られます。<br>
 こういったユースケースでは、都市モデルの景観を再現するために、人や物、そして環境を整えて様々な視点からデジタル都市を再現することが求められます。<br>
 このチュートリアルでは、PLATEAU SDK for Unityと PLATEAU SDK Toolkit for Unity を用いて、PLATEAU を使って都市を再現し、様々な視点で確認することが出来るアプリケーションを開発します。<br>
 
-## 開発環境
+## 1-2.開発環境
 ●	Unity Version 2021.3.27F1(LTS) 以降とVisual Studio <br>
 ●	PLATEAU SDK for Unity <br>
 ●	PLATEAU SDK toolkit for Unity <br>
 (1)	Rendering Toolkit ： 都市環境の再現 <br>
 (2)	Sandbox Tookit ：人や車、街路樹などのオブジェクトを配置し動かす。<br>
 
-## 準備
+## 1-3.準備
 Unityの開発環境を整えます。 <br>
 PLATEAU SDK for Unity をダウンロードしておきます。（第1章【2】参照） <br>
 PLATEAU SDK Toolkit for Unity をダウンロードしておきます。（第3章【1】参照） <br>
 使用する画像を準備しておきます。（第2章【3】参照） <br>
 
 
-# 環境作成
-## プロジェクト作成
+# 2.環境作成
+## 2-1.プロジェクト作成
 Unity Hub からプロジェクトを作成します。Unity Version 2021.3.27F1(LTS) 以降の環境で、3D(URP) を選択してプロジェクトを作成します。
 <img width="800" alt="project_creation" src="./Images/project_creation.png">
 
-## PLATEAU SDKの追加
+## 2-2.PLATEAU SDKの追加
 作成されたプロジェクトに、PLATEAU SDK for Unity を導入します。
 [https://project-plateau.github.io/PLATEAU-SDK-for-Unity/manual/Installation.html](https://project-plateau.github.io/PLATEAU-SDK-for-Unity/manual/Installation.html)
 
-## 3D都市モデルの読み込み
+## 2-3.3D都市モデルの読み込み
 PLATEAU SDKを使って、3D都市モデルをインポートします。
 具体的な手順は[こちら](https://project-plateau.github.io/PLATEAU-SDK-for-Unity/manual/ImportCityModels.html)のマニュアルをご参照ください。
 
-## 視点移動機能の追加
+## 2-4.視点移動機能の追加
 マウスの右クリック&ドラッグで視点方向を、キーボードのASDWQE キーで前後左右、そして上下方向の移動する機能を実装します。
 Hierarchy パネルから MainCameraを選択します。Inspector パネルで、Add Conponet を押して、CameraController と入力し、そのまま NewScript を選択、続けてCreate and Add を選択してスクリプトを作成します。<br>
 <img width="400" alt="new_script" src="./Images/new_script.png"><br>
@@ -155,7 +155,7 @@ public class CameraContoller : MonoBehaviour
     }
 
 ```
-## 初期カメラ位置の変更
+## 2-5.初期カメラ位置の変更
 実行したときのカメラの初期位置を見やすい位置に設定します。<br>
 また、Unity のScene View で見やすい場所に移動したら、Hierarchy から Main Camera を選択して、「Control（Command） + Shift + F」を押します。こうすることで現在の位置をカメラの初期位置とすることが出来ます。<br>
 <img width="800" alt="camera_default" src="./Images/camera_default.jpg">
@@ -163,8 +163,8 @@ public class CameraContoller : MonoBehaviour
 PLATEAU の読み込みが終わったら、アプリを実行します。（右クリック＆ドラッグで視点移動、ASDWキーで移動）<br>
 <img width="800" alt="camera_moved" src="./Images/camera_moved.png">
 
-# 時間・天気コントロール機能の実装
-## Rendering Toolkitの追加
+# 3.時間・天気コントロール機能の実装
+## 3-1.Rendering Toolkitの追加
 作成されたプロジェクトに、PLATEAU SDK Toolkit for Unity を導入します。サンプルも併せて導入します。<br>
 [こちら](https://github.com/Project-PLATEAU/PLATEAU-SDK-Toolkits-for-Unity)からダウンロードしてください。<br>
 <img width="800" alt="rendering_toolkit_install" src="./Images/rendering_toolkit_install.png">
@@ -182,7 +182,7 @@ Rendering Toolkit のパネルを表示します（PLATEAU - PLATEAU Toolkit - R
 実行して「Snow」や「Rain」「Cloudy」のスライダーを操作して、天気が変わるか確認してみましょう。<br>
 <img width="800" alt="env_change" src="./Images/env_change.png">
 
-## テクスチャ設定
+## 3-2.テクスチャ設定
 現状では、夜の窓明かりがないので、窓明かりのテクスチャを追加します。<br>
 Scene View の右下のボタンを使って、一旦Sceneを保存しておきましょう。 <br>
 <img width="400" alt="scene_save" src="./Images/scene_save.png">
@@ -197,7 +197,7 @@ Rendering Toolkit パネルの 環境システムの設定で Time of Day を夜
  <img width="800" alt="time_night" src="./Images/time_night.png">
 
 
-## 背景画像の追加
+## 3-3.背景画像の追加
 雪の量をコントロールするスライダーを画面に作成して、操作ができるようにします。はじめにUIの要素をセットします。<br>
 スライダーを画面に追加しますが、スライダーを配置するエリアの背景画像を追加します。背景画像はこちらを使用します。<br>
  <img width="400" alt="ui_bg" src="./Images/ui_bg.png">
@@ -208,7 +208,7 @@ Rendering Toolkit パネルの 環境システムの設定で Time of Day を夜
 追加した画像を選択して、Inspector の Texture Type をDefaultからSprite(2D and UI) に変更します。こうすることで、UI上で画像を使用することが出来るようになります。<br>
 <img width="800" alt="ui_texture_type" src="./Images/ui_texture_type.png">
 
-## 雪スライダーの設定と機能の実装
+## 3-4.雪スライダーの設定と機能の実装
 続けてスライダーを画面上に配置し、操作したら雪の量が変わるように実装します。
 1.	Canvasを追加します。（GameObject - UI - Canvas）
 2.	Hierarchy パネルに Canvas が追加されたら、選択し、さらにPanelを追加します。（GameObject - UI - Panel）
@@ -270,7 +270,7 @@ Cloud Slider を選択し、Inspector の Slider コンポーネントの一番�
 <img width="600" alt="slider_inapp" src="./Images/slider_inapp.png">
 
 
-## 追加のスライダー実装
+## 3-5.追加のスライダー実装
 同じようにして、SnowSlider と RainSlider も実装してみましょう。<br>
 1.	Slider を追加して、パネルの中に配置
 2.	WeatherTimerController に変数と、処理用の関数を追加
@@ -301,7 +301,7 @@ public class WeatherTimeContoller : MonoBehaviour
 }
 ```
 
-## 時間スライダーの追加と実装
+## 3-6.時間スライダーの追加と実装
 続けて時間変化のためのスライダーを追加し実装します。<br>
 まずはCanvas の中に Panel を追加します。（Middle/Right, PoxX, PosY, Width, Height）また背景を半透明の黒に変更します。Image - Color - 0,0,0,192 に設定します。<br>
 <img width="800" alt="panel_color" src="./Images/panel_color.png">
@@ -344,15 +344,15 @@ public class WeatherTimeContoller : MonoBehaviour
 <img width="800" alt="sliders_inapp" src="./Images/sliders_inapp.png">
 
 
-# 定点カメラ機能の実装
-## 上空カメラの追加
+# 4.定点カメラ機能の実装
+## 4-1.上空カメラの追加
 上空から地上を表示する定点カメラを追加します。<br>
 1.	Cameraオブジェクトを追加します。（GameObject - Camera）
 2.	シーンビューで定点カメラの画角になるように、視点を移動します。
 <img width="800" alt="topview_camera" src="./Images/topview_camera.jpg">
 追加したCameraオブジェクトを選択していることを確認して、Control（Command）＋Shift+F で現在のシーンビューの視点方向を追加したカメラの位置と視点方向にしました。<br>
 
-## カメラボタンの追加
+## 4-2.カメラボタンの追加
 続けてカメラ切り替えのためのボタンを追加します。<br>
 まずはCanvas の中に Panel を追加します。（Middle/Right, PoxX, PosY, Width, Height）また背景を半透明の黒に変更します。Image - Color - 0,0,0,192 に設定 します。<br>
 <img width="600" alt="camera_panel" src="./Images/camera_panel.png">
@@ -368,7 +368,7 @@ public class WeatherTimeContoller : MonoBehaviour
 同じようにPanel の下にボタンを追加し、SkyCamera と名前を変更して、更にテキストも Sky Camera とします。<br>
 <img width="800" alt="skycamera" src="./Images/skycamera.png">
 
-## 切り替え機能の実装
+## 4-3.切り替え機能の実装
 ボタンを押して視点を切り替える機能を実装します。<br>
 Unity でカメラが複数ある場合、Camera コンポーネント内の Priority の大きいものが優先されます。<br>
 MainCamera はデフォルトで -1になっており、追加したCameraは0になっているため、追加したSkyCamera の映像が映ります。<br>
@@ -425,9 +425,9 @@ public class CameraSelector : MonoBehaviour
 <img width="600" alt="app_topview" src="./Images/app_topview.png">
 
 
-# 人・車モデルの実装
+# 5.人・車モデルの実装
 Plateau の都市に Sandbox Toolkit を使って人や車を配置して動かしてみます。<br>
-## Sandbox Toolkitでのアイテムの追加
+## 5-1.Sandbox Toolkitでのアイテムの追加
 Sandbox Toolkit のパネルを表示します。（PLATEAU - PLATEAU Toolkit - Sandbox Toolkit ）<br>
 <img width="500" alt="sandbox_main" src="./Images/sandbox_main.png">
 
@@ -451,7 +451,7 @@ Sandbox Toolkit を使って PLATEAU の都市に、用意された3Dオブジ�
 <img width="800" alt="sandbox_plants" src="./Images/sandbox_plants.png">
 
 
-## トラックの作成
+## 5-2.トラックの作成
 続けてトラックを作成して、その上を人が歩いたり、車が走ったりする設定をします。<br>
 まずはトラックを作るので、Sandbox Toolkit パネルの左端のボタン「トラック」を選択します。<br>
 <img width="500" alt="sandbox_track" src="./Images/sandbox_track.png">
@@ -467,7 +467,7 @@ Sandbox Toolkit を使って PLATEAU の都市に、用意された3Dオブジ�
 <img width="800" alt="track_path_topview" src="./Images/track_path_topview.png">
 
 
-## オブジェクトの配置
+## 5-3.オブジェクトの配置
 作成したトラックの上に車両が走行する設定をします。<br>
 Sandbox Toolkit で車両ボタンを選択します。<br>
 <img width="500" alt="sandbox_vehicles" src="./Images/sandbox_vehicles.png">
@@ -484,7 +484,7 @@ Sandbox Toolkit パネルから1車選んでパス上の置きたいところで
 配置が終わったら「配置ツールを終了」して配置を完了させます。アプリを実行すると、人や車が動いていることがわかります。<br>
 <img width="500" alt="placement_preview" src="./Images/placement_preview.jpg">
 
-## 車視点、人視点への切り替え
+## 5-4.車視点、人視点への切り替え
 Sandbox Toolkitを使って、車視点への切り替えを実装します。<br>
 Sandbox Toolkit には配置した人や車視点の表示に切り替えることが出来ます。これを実現するのが、Sandbox Toolkit のカメラマネージャーです。<br>
 Sandbox Toolkit のパネルを表示して、「カメラマネージャーを作成」をクリックして、カメラマネージャーを作成します。<br>
@@ -498,7 +498,7 @@ Sandbox Toolkit のパネルを表示して、「カメラマネージャーを�
 <img width="400" alt="camera_view_1" src="./Images/camera_view_1.jpg">
 <img width="400" alt="camera_view_2" src="./Images/camera_view_2.jpg">
 
-## 視点切り替えボタンの実装
+## 5-5.視点切り替えボタンの実装
 この切り替え機能も、ボタンで操作できるようにしましょう。<br>
 まずは機能を実装します。CameraSelector に機能を追加します。<br>
 はじめに、Sandbox のUsing を追加して、PlateauSandboxCameraManager を取得するための変数を追加します。先程追加したカメラマネージャーを取得するための変数です。<br>
